@@ -46,7 +46,10 @@ async def main() -> None:
         for resultado in resultados:
             print(resultado)
     except TimeoutError:
-        print("Error: las tres llamadas superaron el límite total de 2 segundos.")
+        print(
+            "Error: se superó el límite total de 2 segundos "
+            "para la ejecución de las tres llamadas."
+        )
 
     semaforo = asyncio.Semaphore(2)
 
