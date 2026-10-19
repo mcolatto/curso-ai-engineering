@@ -8,13 +8,26 @@ from llmclient.schemas import ChatMessage, LLMConfig, ModelResponse, Provider
 
 
 class ChatMessageTests(unittest.TestCase):
+    def test_rechaza_contenido_vacio_o_solo_espacios_para_todos_los_roles(self):
+        for role in ("user", "assistant", "system"):
+            for content in ("", "   ", "\n\t "):
+                with self.subTest(role=role, content=content):
+                    with self.assertRaises(ValidationError):
+                        ChatMessage(role=role, content=content)
+
+    def test_conserva_texto_valido_con_espacios_exteriores(self):
+        for role in ("user", "assistant", "system"):
+            with self.subTest(role=role):
+                message = ChatMessage(role=role, content=" \tHola\n ")
+                self.assertEqual(message.content, " \tHola\n ")
+
     def test_valida_esfuerzo_de_razonamiento(self):
         for effort in (None, "low", "medium", "high", "xhigh", "max"):
-            config = LLMConfig(provider=Provider.OPENAI, model="modelo", reasoning_effort=effort)
+            config = LLMConfig(provider=Provider.OPENAI, openai_api_key="clave-ficticia", model="modelo", reasoning_effort=effort)
             self.assertEqual(config.reasoning_effort, effort)
         for effort in ("loow", "", "none"):
             with self.assertRaises(ValidationError):
-                LLMConfig(provider=Provider.OPENAI, model="modelo", reasoning_effort=effort)
+                LLMConfig(provider=Provider.OPENAI, openai_api_key="clave-ficticia", model="modelo", reasoning_effort=effort)
 
     def test_acepta_los_tres_roles(self):
         for role in ("user", "assistant", "system"):
@@ -29,16 +42,40 @@ class ChatMessageTests(unittest.TestCase):
 
 
 class LLMConfigTests(unittest.TestCase):
+    def test_rechaza_clave_ausente_vacia_o_con_espacios_en_el_esquema(self):
+        for provider, field in (
+            (Provider.OPENAI, "openai_api_key"),
+            (Provider.ANTHROPIC, "anthropic_api_key"),
+        ):
+            cases = [{}, *({field: value} for value in (None, "", " \n\t"))]
+            for credentials in cases:
+                with self.subTest(provider=provider, credentials=credentials):
+                    with self.assertRaises(ValidationError) as raised:
+                        LLMConfig(provider=provider, model="modelo", **credentials)
+                    self.assertIn(field, raised.exception.errors()[0]["msg"])
+
+    def test_clave_de_otro_proveedor_no_sustituye_la_requerida(self):
+        for provider, other_field, required in (
+            (Provider.OPENAI, "anthropic_api_key", "openai_api_key"),
+            (Provider.ANTHROPIC, "openai_api_key", "anthropic_api_key"),
+        ):
+            with self.subTest(provider=provider):
+                with self.assertRaises(ValidationError) as raised:
+                    LLMConfig(provider=provider, model="modelo", **{other_field: "clave-ficticia"})
+                self.assertIn(required, raised.exception.errors()[0]["msg"])
+
     def test_acepta_proveedores_y_valores_iniciales(self):
         for provider in Provider:
             with self.subTest(provider=provider):
-                config = LLMConfig(provider=provider.value, model="modelo-de-prueba")
+                key_name = "openai_api_key" if provider == Provider.OPENAI else "anthropic_api_key"
+                config = LLMConfig(provider=provider.value, model="modelo-de-prueba", **{key_name: "clave-ficticia"})
                 self.assertEqual(config.provider, provider)
                 self.assertEqual(config.temperature, 0.7)
                 self.assertEqual(config.max_tokens, 1024)
                 self.assertEqual(config.timeout_seconds, 30)
-                self.assertIsNone(config.openai_api_key)
-                self.assertIsNone(config.anthropic_api_key)
+                other_key = "anthropic_api_key" if provider == Provider.OPENAI else "openai_api_key"
+                self.assertIsNone(getattr(config, other_key))
+                self.assertEqual(getattr(config, key_name).get_secret_value(), "clave-ficticia")
 
     def test_rechaza_proveedor_desconocido(self):
         with self.assertRaises(ValidationError):
@@ -48,10 +85,10 @@ class LLMConfigTests(unittest.TestCase):
         for model in ("", "   ", "\n\t"):
             with self.subTest(model=model):
                 with self.assertRaises(ValidationError):
-                    LLMConfig(provider=Provider.OPENAI, model=model)
+                    LLMConfig(provider=Provider.OPENAI, openai_api_key="clave-ficticia", model=model)
 
     def test_quita_espacios_exteriores_del_modelo(self):
-        config = LLMConfig(provider=Provider.OPENAI, model=" modelo-de-prueba ")
+        config = LLMConfig(provider=Provider.OPENAI, openai_api_key="clave-ficticia", model=" modelo-de-prueba ")
         self.assertEqual(config.model, "modelo-de-prueba")
 
     def test_acepta_limites_de_temperatura(self):
@@ -59,6 +96,7 @@ class LLMConfigTests(unittest.TestCase):
             with self.subTest(temperature=temperature):
                 config = LLMConfig(
                     provider=Provider.OPENAI,
+                    openai_api_key="clave-ficticia",
                     model="modelo-de-prueba",
                     temperature=temperature,
                 )
@@ -82,6 +120,7 @@ class LLMConfigTests(unittest.TestCase):
                 with self.assertRaises(ValidationError):
                     LLMConfig(
                         provider=Provider.OPENAI,
+                        openai_api_key="clave-ficticia",
                         model="modelo-de-prueba",
                         **parameters,
                     )
@@ -91,7 +130,7 @@ class LLMConfigTests(unittest.TestCase):
         for field in ("openai_api_key", "anthropic_api_key"):
             with self.subTest(field=field):
                 config = LLMConfig(
-                    provider=Provider.OPENAI,
+                    provider=Provider.OPENAI if field == "openai_api_key" else Provider.ANTHROPIC,
                     model="modelo-de-prueba",
                     **{field: fake_key},
                 )

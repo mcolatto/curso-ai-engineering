@@ -22,17 +22,22 @@ async def main() -> None:
         (Provider.ANTHROPIC, "ANTHROPIC_API_KEY", "ANTHROPIC_MODEL", "anthropic_api_key"),
     ]
 
+    requests_attempted = False
     for provider, key_variable, model_variable, key_field in providers:
         print(f"\n=== {provider.value.upper()} ===")
         api_key = os.getenv(key_variable, "").strip()
         if not api_key:
             print(f"Omitido: no se configuró {key_variable}.")
             continue
+        model = os.getenv(model_variable, "").strip()
+        if not model:
+            print(f"Error de configuración: falta {model_variable}.")
+            continue
 
         try:
             config = LLMConfig(
                 provider=provider,
-                model=os.getenv(model_variable, ""),
+                model=model,
                 temperature=os.getenv("LLM_TEMPERATURE", "0.7"),
                 max_tokens=os.getenv("LLM_MAX_TOKENS", "1024"),
                 timeout_seconds=os.getenv("LLM_TIMEOUT_SECONDS", "30"),
@@ -44,13 +49,25 @@ async def main() -> None:
             )
             manager = AsyncLLMManager(config)
         except ValidationError as error:
-            fields = [".".join(str(part) for part in item["loc"]) for item in error.errors()]
+            variables = {
+                "model": model_variable,
+                "temperature": "LLM_TEMPERATURE",
+                "max_tokens": "LLM_MAX_TOKENS",
+                "timeout_seconds": "LLM_TIMEOUT_SECONDS",
+                "reasoning_effort": "OPENAI_REASONING_EFFORT",
+            }
+            fields = [
+                variables.get(item["loc"][0], "configuración del proveedor")
+                if item["loc"] else "configuración del proveedor"
+                for item in error.errors()
+            ]
             print(f"Error de configuración. Revisá: {', '.join(fields)}.")
             continue
         except ValueError:
             print("Error de configuración: no se pudo crear el cliente del proveedor.")
             continue
 
+        requests_attempted = True
         print("Modo normal:")
         print()
         response = await manager.generate(messages)
@@ -65,6 +82,13 @@ async def main() -> None:
         async for chunk in manager.generate_stream(messages):
             print(chunk, end="", flush=True)
         print()
+
+
+    if not requests_attempted:
+        print(
+            "\nNo se ejecutaron solicitudes: configurá las claves, modelos y parámetros "
+            "indicados en .env.example."
+        )
 
 
 if __name__ == "__main__":

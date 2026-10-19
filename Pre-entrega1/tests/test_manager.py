@@ -47,19 +47,6 @@ class AsyncLLMManagerTests(unittest.IsolatedAsyncioTestCase):
                     if name != client_name:
                         constructor.assert_not_called()
 
-    def test_rechaza_clave_ausente_vacia_o_con_espacios_antes_de_crear_cliente(self):
-        for provider, key_name, _ in self.cases:
-            for key in (None, "", " \n\t"):
-                with self.subTest(provider=provider, key=key):
-                    config = LLMConfig(
-                        provider=provider, model="modelo-de-prueba", **{key_name: key}
-                    )
-                    with self.assertRaisesRegex(ValueError, f"Falta {key_name}"):
-                        AsyncLLMManager(config)
-                    for constructor in self.clients.values():
-                        constructor.assert_not_called()
-
-
     def test_transmite_razonamiento_solo_a_openai(self):
         for provider, key_name, client_name in self.cases:
             with self.subTest(provider=provider):
@@ -73,17 +60,6 @@ class AsyncLLMManagerTests(unittest.IsolatedAsyncioTestCase):
                 else:
                     self.assertNotIn("reasoning_effort", kwargs)
 
-
-    def test_clave_de_otro_proveedor_no_sustituye_la_clave_requerida(self):
-        config = LLMConfig(
-            provider=Provider.ANTHROPIC,
-            model="modelo-de-prueba",
-            openai_api_key="clave-ficticia-de-otro-proveedor",
-        )
-        with self.assertRaisesRegex(ValueError, "Falta anthropic_api_key"):
-            AsyncLLMManager(config)
-        for constructor in self.clients.values():
-            constructor.assert_not_called()
 
     async def test_delega_generate_y_conserva_respuesta_o_error(self):
         for provider, key_name, client_name in self.cases:

@@ -16,6 +16,7 @@ from anthropic import (
 )
 
 from anthropic.resources.messages import AsyncMessages
+from pydantic import ValidationError
 
 from llmclient.providers.anthropic_client import AnthropicClient
 from llmclient.schemas import ChatMessage, Provider
@@ -144,12 +145,45 @@ class AnthropicClientTests(unittest.IsolatedAsyncioTestCase):
         )
         context.__aexit__.assert_awaited_once()
 
-    async def test_sin_system_envia_instruccion_vacia(self):
+    async def test_stream_caracteriza_system_ausente_valido_vacio_y_espacios(self):
+        for system_content in (None, "Sos un asistente breve.", "", "   "):
+            with self.subTest(system_content=system_content):
+                self.sdk.messages.stream.reset_mock()
+                if system_content is not None and not system_content.strip():
+                    with self.assertRaises(ValidationError):
+                        ChatMessage(role="system", content=system_content)
+                    self.sdk.messages.stream.assert_not_called()
+                    continue
+                messages = []
+                if system_content is not None:
+                    messages.append(ChatMessage(role="system", content=system_content))
+                    self.assertEqual(messages[0].content, system_content)
+                messages.append(ChatMessage(role="user", content="Hola"))
+
+                stream = MagicMock()
+                stream.text_stream.__aiter__.return_value = ["Hola"]
+                context = self.sdk.messages.stream.return_value
+                context.__aenter__.return_value = stream
+                received = [chunk async for chunk in self.client.generate_stream(messages)]
+
+                self.assertEqual(received, ["Hola"])
+                self.sdk.messages.stream.assert_called_once_with(
+                    model="modelo-de-prueba", max_tokens=200,
+                    messages=[{"role": "user", "content": "Hola"}],
+                    **({"system": system_content} if system_content is not None else {}),
+                )
+                context.__aexit__.assert_awaited_once_with(None, None, None)
+
+    async def test_sin_system_omite_argumento_en_generacion_normal(self):
         self.create.return_value = SimpleNamespace(
             content=[SimpleNamespace(type="text", text="Hola")]
         )
         await self.client.generate(self.messages)
-        self.assertEqual(self.create.call_args.kwargs["system"], "")
+        self.create.assert_awaited_once_with(
+            model="modelo-de-prueba", max_tokens=200,
+            messages=[{"role": "user", "content": "Hola"}],
+        )
+        self.assertNotIn("system", self.create.call_args.kwargs)
 
     async def test_errores_al_abrir_stream_se_emiten_como_texto(self):
         for error in self.errores_simulados():

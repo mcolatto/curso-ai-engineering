@@ -57,6 +57,7 @@ class MainTests(unittest.IsolatedAsyncioTestCase):
     async def test_sin_claves_omite_todos_y_carga_env_junto_al_script(self):
         output = await self.ejecutar_demo({})
         self.assertEqual(output.count("Omitido:"), 2)
+        self.assertIn("No se ejecutaron solicitudes:", output)
         self.manager_constructor.assert_not_called()
         self.load_dotenv.assert_called_once_with(Path(demo.__file__).resolve().parent / ".env")
 
@@ -74,6 +75,7 @@ class MainTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(output.count("Respuesta completa"), 2)
         self.assertEqual(output.count("Primer fragmento segundo fragmento"), 2)
         self.assertNotIn("clave-ficticia", output)
+        self.assertNotIn("No se ejecutaron solicitudes:", output)
         for call in self.manager_constructor.call_args_list:
             config = call.args[0]
             self.assertEqual(config.temperature, 0.5)
@@ -104,8 +106,24 @@ class MainTests(unittest.IsolatedAsyncioTestCase):
             "OPENAI_API_KEY": "clave-ficticia",
             "ANTHROPIC_API_KEY": "clave-ficticia", "ANTHROPIC_MODEL": "modelo-claude",
         })
-        self.assertIn("Error de configuración. Revisá: model", output)
+        self.assertIn("Error de configuración: falta OPENAI_MODEL.", output)
         self.assertEqual(self.events, [(Provider.ANTHROPIC, "normal"), (Provider.ANTHROPIC, "stream")])
+
+    async def test_modelos_ausentes_o_vacios_identifican_variable_sin_hacer_llamadas(self):
+        for model in (None, "", " \n\t"):
+            with self.subTest(model=model):
+                environment = {
+                    "OPENAI_API_KEY": "clave-ficticia",
+                    "ANTHROPIC_API_KEY": "clave-ficticia",
+                }
+                if model is not None:
+                    environment.update(OPENAI_MODEL=model, ANTHROPIC_MODEL=model)
+                output = await self.ejecutar_demo(environment)
+                self.assertIn("falta OPENAI_MODEL.", output)
+                self.assertIn("falta ANTHROPIC_MODEL.", output)
+                self.assertIn("No se ejecutaron solicitudes:", output)
+                self.assertNotIn("clave-ficticia", output)
+                self.manager_constructor.assert_not_called()
 
     async def test_parametros_invalidos_no_crean_clientes_ni_exponen_valores(self):
         for variable in ("LLM_TEMPERATURE", "LLM_MAX_TOKENS", "LLM_TIMEOUT_SECONDS"):
@@ -114,7 +132,8 @@ class MainTests(unittest.IsolatedAsyncioTestCase):
                     "OPENAI_API_KEY": "clave-ficticia", "OPENAI_MODEL": "modelo-openai",
                     variable: "valor-sensible-ficticio",
                 })
-                self.assertIn("Error de configuración", output)
+                self.assertIn(f"Error de configuración. Revisá: {variable}.", output)
+                self.assertIn("No se ejecutaron solicitudes:", output)
                 self.assertNotIn("valor-sensible-ficticio", output)
                 self.assertNotIn("clave-ficticia", output)
                 self.manager_constructor.assert_not_called()

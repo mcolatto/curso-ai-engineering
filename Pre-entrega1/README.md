@@ -80,7 +80,7 @@ cp .env.example .env
 ```
 
 Si `.env` ya existe, editarlo directamente para conservar su configuración.
-Completar las claves y modelos de los proveedores que se utilizarán.
+Completar las claves y modelos de los proveedores que se utilizarán. Para ejecutar ambos proveedores se necesita, en cada plataforma, una clave válida con créditos disponibles y acceso al identificador de modelo seleccionado. Crear una clave no garantiza saldo ni acceso al modelo.
 
 | Variable | Uso | Valor en `.env.example` |
 | --- | --- | --- |
@@ -114,7 +114,7 @@ conda run -n preentrega312 python main.py
 
 El programa recorre OpenAI y Anthropic, en ese orden. Para cada proveedor con clave configurada, pregunta «¿Qué es la entropía? Respondé en 2 líneas.» primero en modo normal y luego en streaming. Cada ejecución realiza dos solicitudes por proveedor configurado; las llamadas reales pueden consumir créditos y requieren acceso al modelo seleccionado.
 
-Una clave vacía omite el proveedor. Un error de configuración se informa y permite continuar con el siguiente. Los clientes devuelven errores controlados: en modo normal mediante `ModelResponse.error`, y en streaming mediante un fragmento de texto con el mensaje de error. Los reintentos automáticos del SDK están desactivados.
+Una clave ausente, vacía o con solo espacios omite el proveedor. Si hay clave pero falta el modelo, se informa `falta OPENAI_MODEL` o `falta ANTHROPIC_MODEL`. Los parámetros inválidos se identifican mediante el nombre de su variable de entorno, sin mostrar su valor. Un error de configuración se informa y permite continuar con el siguiente. Si ninguno llega a intentar la generación, se muestra un aviso final indicando que no se ejecutaron solicitudes y se remite a `.env.example`. Los clientes devuelven errores controlados: en modo normal mediante `ModelResponse.error`, y en streaming mediante un fragmento de texto con el mensaje de error. Los reintentos automáticos del SDK están desactivados.
 
 ## Happy path: respuesta normal y streaming
 
@@ -154,9 +154,13 @@ Omitido: no se configuró OPENAI_API_KEY.
 
 === ANTHROPIC ===
 Omitido: no se configuró ANTHROPIC_API_KEY.
+
+No se ejecutaron solicitudes: configurá las claves, modelos y parámetros indicados en .env.example.
 ```
 
-El manager, si se utiliza directamente, rechaza una clave ausente o vacía con `ValueError` antes de crear el cliente.
+Al construir `LLMConfig`, Pydantic exige el modelo no vacío y la clave no vacía correspondiente al proveedor; de lo contrario lanza `ValidationError`, antes de crear el cliente del SDK. Esta validación comprueba presencia, no autenticidad, saldo ni permisos de acceso. El manager conserva además una comprobación defensiva de la clave.
+
+`ChatMessage` admite únicamente los roles `user`, `assistant` y `system`, y rechaza contenido vacío o compuesto solo por espacios en blanco. El contenido válido se conserva sin recortarlo. En Anthropic, las instrucciones de sistema se separan de la conversación y el parámetro `system` se omite cuando no hay instrucciones.
 
 ### Clave inválida
 
@@ -213,8 +217,8 @@ Alternativa explícita con Conda:
 conda run -n preentrega312 python -m unittest discover -s tests -v
 ```
 
-La suite contiene **49 tests**, comprobados en Python 3.12. No requiere claves ni hace llamadas reales a APIs: utiliza mocks para simular respuestas y errores.
+La suite contiene **56 tests**, comprobados en Python 3.12. No requiere claves ni hace llamadas reales a APIs: utiliza mocks para simular respuestas y errores.
 
-Cubre validación y ocultamiento de claves, interfaz abstracta, selección de proveedor, delegación, generación normal, streaming, respuestas sin texto, autenticación, cuota, conexión y timeout. También verifica la conversión de mensajes de sistema de Anthropic, los parámetros de razonamiento de OpenAI, la continuación de la demostración ante errores controlados y que otra tarea pueda avanzar mientras una llamada simulada está pendiente.
+Cubre validación y ocultamiento de claves, interfaz abstracta, selección de proveedor, delegación, generación normal, streaming, respuestas sin texto, autenticación, cuota, conexión y timeout. También verifica la propagación incremental de fragmentos desde el SDK simulado a través del cliente Anthropic y del manager antes de cerrar el stream, la conservación de texto anterior a un error, los payloads con y sin instrucciones de sistema y el manejo de un rechazo simulado para una lista vacía. Comprueba además la conversión de mensajes de sistema de Anthropic, los parámetros de razonamiento de OpenAI, la continuación de la demostración ante errores controlados y que otra tarea pueda avanzar mientras una llamada simulada está pendiente.
 
 Si un stream falla después de emitir texto, conserva los fragmentos ya entregados y agrega el mensaje de error; no reanuda la generación.

@@ -82,11 +82,12 @@ class AnthropicClient(BaseLLMClient):
         """Genera una respuesta completa (modo normal, no streaming)."""
         try:
             conversation, system = self._convertir_mensajes(messages)
+            system_parameters = {"system": system} if system.strip() else {}
             response = await self._client.messages.create(
                 model=self.model,
                 max_tokens=self.max_tokens,  # obligatorio en Anthropic, a diferencia de OpenAI
                 messages=conversation,
-                system=system,
+                **system_parameters,
             )
             content = "".join(
                 block.text for block in response.content if block.type == "text"
@@ -115,11 +116,12 @@ class AnthropicClient(BaseLLMClient):
         """Genera la respuesta token a token (modo streaming)."""
         try:
             conversation, system = self._convertir_mensajes(messages)
+            system_parameters = {"system": system} if system.strip() else {}
             async with self._client.messages.stream(
                 model=self.model,
                 max_tokens=self.max_tokens,
                 messages=conversation,
-                system=system,
+                **system_parameters,
             ) as stream:
                 async for texto in stream.text_stream:
                     if texto:
