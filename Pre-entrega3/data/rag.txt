@@ -1,0 +1,68 @@
+¿Qué es la generación aumentada por recuperación?
+La generación aumentada por recuperación, o RAG, es una arquitectura para optimizar el rendimiento de un modelo de inteligencia artificial (IA) conectándolo con bases de conocimiento externas. La RAG ayuda a los modelos de lenguaje grandes (LLM) a ofrecer respuestas más relevantes con una mayor calidad.
+
+Los modelos de IA generativa se entrenan en grandes conjuntos de datos y se refieren a esta información para generar resultados. Sin embargo, los conjuntos de datos de entrenamiento son finitos y se limitan a la información a la que puede acceder el desarrollador de IA: obras de dominio público, artículos de Internet, contenido de redes sociales y otros datos de acceso público.
+
+La RAG permite que los modelos de IA generativa accedan a bases de conocimiento externas adicionales, como datos organizacionales internos, revistas académicas y conjuntos de datos especializados. Al integrar información relevante en el proceso de generación, los chatbots y otras herramientas de procesamiento de lenguaje natural (PLN) pueden crear contenido específico de dominio más preciso sin necesidad de entrenamiento adicional.
+
+¿Cuáles son los beneficios de la RAG?
+La RAG permite a las organizaciones evitar altos costos de reentrenamiento al adaptar los modelos de IA generativa a casos de uso específicos del dominio. Las empresas pueden usar la RAG para cerrar las brechas en la base de conocimientos de un modelo de machine learning para que pueda proporcionar mejores respuestas.
+
+Los principales beneficios de la RAG incluyen:
+
+Implementación y escalado de IA rentables
+Acceso a datos actuales específicos del dominio
+Menor riesgo de alucinaciones de la IA
+Mayor confianza de los usuarios
+Casos de uso ampliados
+Control mejorado del desarrollador y mantenimiento de modelos
+Mayor seguridad de los datos
+Implementación y escalado de IA rentables
+Al implementar la IA, la mayoría de las organizaciones seleccionan primero un modelo fundacional: los modelos de aprendizaje profundo que sirven como base para el desarrollo de versiones más avanzadas. Los modelos fundacionales suelen tener bases de conocimiento generalizadas pobladas con datos de entrenamiento disponibles públicamente, como contenido de Internet disponible en el momento del entrenamiento.
+
+Volver a entrenar un modelo fundacional o ajustarlo, donde un modelo fundacional se entrena aún más en nuevos datos en un conjunto de datos más pequeño y específico de dominio, es costoso a nivel computacional y requiere muchos recursos. El modelo ajusta algunos de sus parámetros o todos para ajustar su rendimiento a los nuevos datos especializados.
+
+Con la RAG, las empresas pueden utilizar fuentes de datos internas y autorizadas y obtener aumentos similares en el rendimiento del modelo sin volver a entrenar. Las empresas pueden escalar su implementación de aplicaciones de IA según sea necesario, al tiempo que mitigan los aumentos de costos y requisitos de recursos.
+
+Acceso a datos actuales y específicos del dominio
+Los modelos de IA generativa tienen un límite de conocimiento, el punto en el que se actualizaron por última vez sus datos de entrenamiento. A medida que un modelo envejece más allá de su límite de conocimiento, pierde relevancia con el tiempo. Los sistemas RAG conectan modelos con datos externos complementarios en tiempo real e incorporan información actualizada en las respuestas generadas.
+
+Las empresas utilizan la RAG para equipar a los modelos con información específica, como datos de clientes patentados, investigaciones autorizadas y otros documentos relevantes.
+
+Los modelos de RAG también pueden conectarse a Internet con interfaces de programación de aplicaciones y obtener acceso a fuentes de redes sociales en tiempo real y comentarios de consumidores para comprender mejor el sentimiento del mercado. Mientras tanto, el acceso a las noticias de última hora y a los motores de búsqueda puede dar lugar a respuestas más precisas a medida que los modelos incorporan la información recuperada en el proceso de generación de texto.
+
+Menor riesgo de alucinaciones de la IA
+Los modelos de IA generativa, como GPT de OpenAI, funcionan detectando patrones en sus datos y luego emplean esos patrones para predecir los resultados más probables de las entradas de los usuarios. A veces, los modelos detectan patrones que no existen. Una alucinación o confabulación ocurre cuando los modelos presentan información incorrecta o inventada como si fuera objetiva.
+
+La RAG ancla los LLM en conocimientos específicos respaldados por datos fácticos, fidedignos y actuales. En comparación con un modelo generativo que opera solo con sus datos de entrenamiento, los modelos de RAG tienden a proporcionar respuestas más precisas dentro de los contextos de sus datos externos. Si bien la RAG puede reducir el riesgo de alucinaciones, no puede hacer que un modelo sea a prueba de errores.
+
+Mayor confianza del usuario
+Los chatbots, una implementación común de IA generativa, responden preguntas planteadas por usuarios humanos. Para que un chatbot como ChatGPT tenga éxito, los usuarios deben ver sus resultados como confiables. Los modelos de RAG pueden incluir citas a las fuentes de conocimiento en sus datos externos como parte de sus respuestas.
+
+Cuando los modelos de RAG citan sus fuentes, los usuarios humanos pueden verificar esos resultados para confirmar la precisión mientras consultan los trabajos citados para obtener aclaraciones de seguimiento e información adicional. El almacenamiento de datos corporativos suele ser un laberinto complejo y aislado. Las respuestas de la RAG con citas dirigen a los usuarios directamente hacia los materiales que necesitan.
+
+Casos de uso ampliados
+El acceso a más datos significa que un modelo puede manejar una gama más amplia de instrucciones. Las empresas pueden optimizar los modelos y obtener más valor de ellos ampliando sus bases de conocimientos y, a su vez, los contextos en los que esos modelos generan resultados confiables.
+
+Al combinar la IA generativa con los sistemas de recuperación, los modelos de RAG pueden recuperar e integrar información de múltiples fuentes de datos en respuesta a consultas complejas.
+
+Control mejorado del desarrollador y mantenimiento de modelos
+Las organizaciones modernas procesan constantemente cantidades masivas de datos, desde entradas de pedidos hasta proyecciones de mercado, rotación de empleados y más. La construcción eficaz de pipelines de datos y el almacenamiento de datos es primordial para una implementación sólida de la RAG.
+
+Al mismo tiempo, los desarrolladores y científicos de datos pueden modificar las fuentes de datos a las que los modelos tienen acceso en cualquier momento. Reposicionar un modelo de una tarea a otra se convierte en una tarea de ajuste de sus fuentes de conocimiento externas en lugar de refinamiento o reentrenamiento. Si es necesario realizar ajustes, los desarrolladores pueden priorizar ese trabajo en lugar de gestionar las fuentes de datos del modelo.
+
+Mayor seguridad de los datos
+Debido a que la RAG conecta un modelo a fuentes de conocimiento externas en lugar de incorporar ese conocimiento a los datos de entrenamiento del modelo, mantiene una división entre el modelo y ese conocimiento externo. Las empresas pueden usar la RAG para preservar datos propios y, al mismo tiempo, otorgar acceso a los modelos, que puede revocarse en cualquier momento.
+
+Sin embargo, las empresas deben estar atentas para mantener la seguridad de las propias bases de datos externas. La RAG utiliza bases de datos vectoriales, que emplea incorporaciones para convertir puntos de datos en representaciones numéricas. Si se vulneran estas bases de datos, los atacantes pueden revertir el proceso de incorporación vectorial y acceder a los datos originales, especialmente si la base de datos vectorial no está cifrada.
+
+Casos de uso de RAG
+Los sistemas de RAG esencialmente permiten a los usuarios consultar bases de datos con lenguaje conversacional. Las capacidades de respuesta a preguntas basadas en datos de los sistemas de RAG se han aplicado en una variedad de casos de uso, que incluyen:
+
+Chatbots y asistentes virtuales especializados
+
+- Investigación
+- Generación de contenido
+- Análisis de mercado y desarrollo de productos
+- Motores de conocimiento
+-Servicios de recomendación

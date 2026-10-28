@@ -1,0 +1,41 @@
+¿Qué es la curación de datos?
+La curación de datos es el proceso de crear y gestionar conjuntos de datos para que las personas puedan encontrarlos, acceder a ellos, usarlos y reutilizarlos según sea necesario. Implica agregar activos de datos (colecciones valiosas de datos) a un repositorio central para consolidar los metadatos de dichos activos, enriquecerlos con información adicional y analizar y mejorar la calidad de los datos a lo largo de su ciclo de vida.
+ 
+Hoy en día, las organizaciones generan cantidades ingentes de datos, con más de 400 millones de terabytes diarios . Gran parte de estos datos pueden resultar tremendamente valiosos, pero solo si las empresas logran comprenderlos y aprovecharlos con éxito.
+
+Como parte de una gestión de datos eficaz , la curación de datos ayuda a las empresas a obtener información valiosa a partir de los datos corporativos y a utilizarla para la toma de decisiones. Los datos bien curados también se consideran fundamentales para mejorar el rendimiento de las iniciativas de inteligencia artificial  (IA) y para garantizar el cumplimiento normativo en materia de gestión y privacidad de datos .
+
+Fuera del ámbito empresarial, la gestión de datos es un proceso clave en la investigación y el ámbito académico. Por ejemplo, la gestión de datos de investigación puede mejorar el intercambio y el archivo de datos entre desarrolladores, científicos, profesionales de la salud y otros investigadores.
+
+El proceso de curación de datos puede ser manual o puede realizarse con la ayuda de la automatización , mediante software diseñado para ejecutar actividades de curación a gran escala.
+
+¿Por qué es importante la curación de datos?
+En esencia, la gestión de datos permite a las empresas utilizar sus datos para generar valor. Pero también les ayuda a gestionar el crecimiento exponencial de los datos, respaldar iniciativas de IA eficaces y responsables, mantener el cumplimiento normativo y garantizar la usabilidad de los datos.
+
+Volumen de datos en aumento
+El crecimiento exponencial del volumen de datos ha proporcionado a las organizaciones más información relevante para el negocio que nunca, llegando algunas a acumular conjuntos de datos que contienen terabytes o petabytes de información procedente de diversas fuentes. A nivel macro, se estima que en 2024 se generaron a nivel mundial 149 zettabytes de datos, cifra que se prevé que se duplique con creces para 2028.
+
+Realizar el control de calidad y el análisis de datos en conjuntos de datos tan grandes y complejos como el " big data " no es tarea fácil. Sin embargo, es fundamental, ya que los datos empresariales se están convirtiendo cada vez más en una fuente de información valiosa. Anotar y organizar los datos para la toma de decisiones basada en datos puede brindar una ventaja competitiva y mejorar el rendimiento de las empresas en todos los sectores.
+
+Inteligencia artificial eficaz
+Abordar los desafíos relacionados con la calidad y la usabilidad de los datos se ha vuelto especialmente urgente a medida que las organizaciones adoptan las capacidades de la IA como un imperativo estratégico. Los sistemas de IA tienen el potencial de transformar los negocios y aumentar la productividad, pero sus necesidades de datos son considerables: requieren datos de alta calidad para funcionar eficazmente. 
+
+Los datos de baja calidad pueden provocar un rendimiento deficiente del modelo, un escenario en el que "si introduces datos erróneos, obtendrás resultados erróneos". Los conjuntos de datos con problemas de calidad, como valores faltantes, valores atípicos o inconsistencias, pueden distorsionar el análisis y generar resultados incorrectos.
+
+Cumplimiento normativo
+La gestión de datos también contribuye a garantizar el cumplimiento normativo, especialmente en el contexto de la IA. Muchos sectores, sobre todo aquellos que manejan información sensible como la sanidad o los servicios financieros, deben desenvolverse en un panorama normativo en constante evolución que rige la recopilación, el procesamiento, el almacenamiento y la seguridad de los datos. 
+
+Las prácticas eficaces de gestión de datos ayudan a garantizar que los datos se recopilen, almacenen, procesen y etiqueten de acuerdo con estas normas. La Ley de IA de la UE , por ejemplo, exige que los sistemas de IA de alto riesgo adopten prácticas rigurosas de gobernanza de datos para garantizar que los datos de entrenamiento, validación y prueba cumplan con criterios de calidad específicos. Por ejemplo, una gobernanza eficaz en torno al proceso de recopilación de datos es fundamental.
+
+Reutilización de datos
+La curación de datos también es fundamental para garantizar la reutilización de conjuntos de datos de alta calidad. Por ejemplo, mediante la curación de datos, las organizaciones pueden crear y mantener un glosario centralizado adaptado específicamente a su negocio. Gracias a esta fuente única de información fidedigna, los usuarios de toda la organización pueden comprender y utilizar mejor los datos. Cuando los datos son accesibles y de uso universal, es más probable que los usuarios recurran a ellos repetidamente para obtener información valiosa.
+
+¿Cuáles son los pasos clave para la curación de datos?
+Si bien las prácticas de curación de datos pueden variar según la organización, los investigadores han identificado actividades de curación comunes entre los curadores de datos, ingenieros de datos, científicos de datos, administradores de datos y otros profesionales de la gestión de datos a lo largo de los ciclos de vida de los macrodatos. 1 Estas incluyen:
+
+-Planificación
+-Descripción
+-Preparación
+-Garantía
+-Almacenamiento y conservación
+-Descubrimiento y acceso

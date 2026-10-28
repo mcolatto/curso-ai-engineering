@@ -1,0 +1,54 @@
+¿Qué es una base de datos vectorial?
+Una base de datos vectorial almacena, gestiona e indexa datos vectoriales de alta dimensión.
+
+En una base de datos vectorial,  los datos  se almacenan como matrices numéricas llamadas "vectores", que se pueden comparar y agrupar según su similitud. Este diseño permite consultas de baja latencia  , lo que la hace ideal para  aplicaciones de inteligencia artificial  (IA).
+
+Las bases de datos vectoriales están ganando popularidad porque ofrecen la velocidad y el rendimiento necesarios para impulsar  casos de uso de IA generativa  . De hecho, según una investigación de 2025,  la adopción de bases de datos vectoriales creció un 377 % interanual , el crecimiento más rápido registrado en cualquier tecnología relacionada con modelos de lenguaje a gran escala (LLM).
+
+Bases de datos vectoriales frente a bases de datos tradicionales
+La naturaleza de los datos ha cambiado drásticamente en los últimos años. Ya no se limitan a la información estructurada almacenada ordenadamente en filas y columnas de bases de datos tradicionales. Los datos no estructurados —que incluyen publicaciones en redes sociales, imágenes, videos y audio— están creciendo tanto en volumen como en valor, lo que está transformando las estrategias de IA empresariales y generando nuevas exigencias para la infraestructura de datos.
+
+Las bases de datos relacionales tradicionales destacan por su capacidad para gestionar conjuntos de datos estructurados y semiestructurados dentro de esquemas definidos . Sin embargo, cargar y preparar datos no estructurados en una base de datos relacional para cargas de trabajo de IA requiere mucho trabajo.
+
+La búsqueda tradicional agrava esta limitación: se basa en tokens discretos como palabras clave, etiquetas o metadatos , y devuelve resultados basados ​​en coincidencias exactas. Por ejemplo, una búsqueda de "smartphone" solo recupera contenido que contiene ese término específico.
+
+Las bases de datos vectoriales adoptan un enfoque fundamentalmente diferente. En lugar de filas y columnas, los puntos de datos se representan como vectores densos, donde cada dimensión representa una característica aprendida de los datos. Estas representaciones vectoriales de alta dimensión existen en el espacio vectorial, donde las relaciones entre los elementos se pueden medir geométricamente.
+
+Dado que cada dimensión representa una característica latente —una característica inferida aprendida mediante modelos y algoritmos matemáticos—, las representaciones vectoriales capturan patrones ocultos. Una búsqueda vectorial de "teléfono inteligente" también puede devolver resultados semánticamente relacionados, como "teléfono móvil" o "dispositivo móvil", aunque no aparezcan esas palabras exactas.
+
+Al modelar los datos en un espacio de alta dimensión y aplicar técnicas de indexación especializadas, las bases de datos vectoriales permiten realizar búsquedas de similitud con baja latencia en grandes conjuntos de datos , algo que las bases de datos relacionales no fueron diseñadas para soportar.
+
+¿Por qué son importantes las bases de datos vectoriales?
+El rápido auge de los modelos de lenguaje natural (LLM), los sistemas de IA generativa y los flujos de trabajo avanzados de procesamiento del lenguaje natural (PLN) ha transformado la forma en que las organizaciones gestionan y almacenan los datos. Las cargas de trabajo de IA actuales dependen de una interacción rápida y en tiempo real con datos vectoriales, así como de una integración perfecta con los sistemas de generación aumentada por recuperación (RAG).
+
+Las bases de datos vectoriales proporcionan la infraestructura necesaria para satisfacer estas demandas. Permiten realizar búsquedas de similitud con baja latencia en grandes volúmenes de datos no estructurados , lo que impulsa aplicaciones de IA como chatbots y sistemas de recomendación .
+
+Conceptos básicos dentro de las bases de datos vectoriales
+Para comprender cómo funcionan las bases de datos vectoriales, resulta útil establecer dos conceptos fundamentales: los vectores, que describen los datos en forma numérica, y las incrustaciones vectoriales, que traducen el contenido no estructurado en representaciones de alta dimensión que capturan el significado y el contexto.
+
+Vectores
+Los vectores son un subconjunto de tensores. En aprendizaje automático (ML), tensor es un término genérico para un grupo de números —o una agrupación de grupos de números— en un espacio n-dimensional. Los tensores funcionan como una herramienta matemática de contabilidad para datos. Partiendo del elemento más pequeño:
+
+Un escalar es un tensor de dimensión cero que contiene un solo número. Por ejemplo, un sistema que modela datos meteorológicos podría representar la temperatura máxima de un solo día (en grados Fahrenheit) en forma escalar como 85.
+Un vector es un tensor unidimensional (o de primer grado o primer orden) que contiene múltiples escalares del mismo tipo de datos. Siguiendo con nuestro ejemplo, un modelo meteorológico podría usar las temperaturas mínima, media y máxima de un solo día en forma vectorial: 62, 77, 85. Cada componente escalar es una característica —es decir, una dimensión— del vector, que representa una característica del clima de ese día.
+En otras palabras, los vectores son una forma de organizar números de manera estructurada. Pero para que los sistemas de IA procesen esa información no estructurada, los datos deben transformarse en matrices numéricas. Esta transformación se logra mediante incrustaciones vectoriales.
+
+Incrustaciones vectoriales
+Las incrustaciones vectoriales son representaciones numéricas de puntos de datos que convierten varios tipos de datos, incluidos texto e imágenes, en matrices de números que los modelos de aprendizaje automático pueden procesar.
+
+Para lograrlo, los modelos de incrustación aprenden a mapear los datos de entrada a un espacio vectorial de alta dimensión. Una función de pérdida específica para la tarea da forma al espacio vectorial cuantificando los errores de predicción. Posteriormente, los modelos de IA que utilizan estas incrustaciones vectoriales pueden emplearse en tareas como la clasificación, la recuperación o la agrupación de datos.
+
+Consideremos un pequeño corpus de palabras, donde las incrustaciones de palabras se representan como vectores tridimensionales:
+
+gato [0.2, -0.4, 0.7]
+perro [0,6, 0,1, 0,5]
+En este ejemplo, cada palabra («gato») se asocia con un vector único ([0.2, -0.4, 0.7]). Los valores del vector representan la posición de la palabra en un espacio vectorial tridimensional. Se espera que las palabras con significados o contextos similares tengan representaciones vectoriales similares. Los vectores de «gato» y «perro» estarían muy cerca, lo que refleja su relación semántica.
+
+De forma similar, las palabras «coche» y «vehículo» comparten el mismo significado, pero se escriben de forma diferente. Para que una aplicación de IA realice una búsqueda semántica, las representaciones vectoriales de «coche» y «vehículo» deben capturar su significado compartido. Las incrustaciones vectoriales codifican este significado numéricamente, lo que las convierte en la base de los motores de recomendación, los chatbots y las aplicaciones generativas como ChatGPT de OpenAI.
+
+¿Cómo funcionan las bases de datos vectoriales?
+Para facilitar la recuperación semántica rápida y escalable, las bases de datos vectoriales se basan en tres funciones principales:
+
+-Almacenamiento vectorial
+-Indexación vectorial
+-Búsqueda vectorial
