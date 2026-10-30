@@ -1,0 +1,22 @@
+[
+  {
+    "pregunta": "What is Persistence in LangGraph?",
+    "documento_id_esperado": "persistence.md"
+  },
+  {
+    "pregunta": "What is the definition of StateSnapshot in checkpointers?",
+    "documento_id_esperado": "checkpointers.md"
+  },
+  {
+    "pregunta": "How can I pause a workflow to request human approval before continuing execution?",
+    "documento_id_esperado": "interrupts.md"
+  },
+  {
+    "pregunta": "How can an agent retain context during a conversation and remember information across different sessions?",
+    "documento_id_esperado": "memory.md"
+  },
+  {
+    "pregunta": "Which operations allow LangGraph to replay an earlier execution or explore a different outcome?",
+    "documento_id_esperado": "time-travel.md"
+  }
+]
