@@ -1,0 +1,26 @@
+[
+  {
+    "destino": "Tokio",
+    "id": "hotel-tokio-01",
+    "nombre": "Hotel Sakura Central",
+    "fuente": "data/hoteles.json",
+    "direccion": "Sector de Marunouchi, Tokio",
+    "coordenadas": {"latitud": 35.6840, "longitud": 139.7690},
+    "estrellas": 4,
+    "capacidad": 4,
+    "disponibilidad": "disponible_en_fuente",
+    "periodos_disponibles": [{"inicio": "2027-02-01", "fin": "2027-02-28"}]
+  },
+  {
+    "destino": "Tokio",
+    "id": "hotel-tokio-02",
+    "nombre": "Residencia Aoi Familiar",
+    "fuente": "data/hoteles.json",
+    "direccion": "Sector de Nihonbashi, Tokio",
+    "coordenadas": {"latitud": 35.6880, "longitud": 139.7740},
+    "estrellas": 3,
+    "capacidad": 6,
+    "disponibilidad": "disponible_en_fuente",
+    "periodos_disponibles": [{"inicio": "2027-02-10", "fin": "2027-02-25"}]
+  }
+]

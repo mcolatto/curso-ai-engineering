@@ -1,0 +1,1566 @@
+{
+  "respuesta_completa": {
+    "solicitud_usuario": "Quiero viajar a Tokio del 12 al 20 de febrero de 2027. Somos cuatro personas y buscamos alojamiento, actividades turísticas y gastronomía.",
+    "thread_id": "respuesta_completa-5bb1620795504ef58310f846f54077a0",
+    "eventos": [
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-02-12",
+            "fecha_fin": "2027-02-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "hoteleria",
+            "instruccion": "Investigá opciones de alojamiento en Tokio para cuatro personas del 12 al 20 de febrero de 2027. Verificá que la capacidad del alojamiento o la combinación de habitaciones cubra al grupo e indicá las limitaciones de la información disponible para esas fechas.",
+            "evaluacion_supervisor": null
+          }
+        }
+      },
+      {
+        "nodo": "hoteleria",
+        "actualizacion": {
+          "resultado_hoteleria": {
+            "estado_busqueda": "completada",
+            "hoteles": [
+              {
+                "id": "hotel-tokio-01",
+                "nombre": "Hotel Sakura Central",
+                "fuente": "data/hoteles.json",
+                "direccion": "Sector de Marunouchi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.684,
+                  "longitud": 139.769
+                },
+                "estrellas": 4,
+                "capacidad": 4,
+                "disponibilidad": "disponible_en_fuente",
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-02-28"
+                  }
+                ],
+                "observaciones": []
+              },
+              {
+                "id": "hotel-tokio-02",
+                "nombre": "Residencia Aoi Familiar",
+                "fuente": "data/hoteles.json",
+                "direccion": "Sector de Nihonbashi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.688,
+                  "longitud": 139.774
+                },
+                "estrellas": 3,
+                "capacidad": 6,
+                "disponibilidad": "disponible_en_fuente",
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-10",
+                    "fin": "2027-02-25"
+                  }
+                ],
+                "observaciones": []
+              }
+            ],
+            "observaciones": []
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-02-12",
+            "fecha_fin": "2027-02-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "turismo",
+            "instruccion": "Investigá actividades turísticas y opciones gastronómicas en Tokio para el viaje de cuatro personas del 12 al 20 de febrero de 2027, sin asumir preferencias adicionales. Indicá las recomendaciones y cualquier limitación relevante para esas fechas según la información disponible.",
+            "evaluacion_supervisor": null
+          }
+        }
+      },
+      {
+        "nodo": "turismo",
+        "actualizacion": {
+          "resultado_turismo": {
+            "estado_busqueda": "completada",
+            "opciones": [
+              {
+                "id": "turismo-tokio-01",
+                "nombre": "Museo de la Ciudad Sakura",
+                "fuente": "data/turismo.json",
+                "categoria": "attraction",
+                "direccion": "Sector de Kyobashi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.675,
+                  "longitud": 139.772
+                },
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-03-31"
+                  }
+                ],
+                "restricciones": [],
+                "observaciones": []
+              },
+              {
+                "id": "turismo-tokio-02",
+                "nombre": "Mirador Aoi",
+                "fuente": "data/turismo.json",
+                "categoria": "viewpoint",
+                "direccion": "Sector de Otemachi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.687,
+                  "longitud": 139.765
+                },
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-03-31"
+                  }
+                ],
+                "restricciones": [],
+                "observaciones": []
+              },
+              {
+                "id": "turismo-tokio-03",
+                "nombre": "Restaurante Jardín Sakura",
+                "fuente": "data/turismo.json",
+                "categoria": "gastronomy",
+                "direccion": "Sector de Ginza, Tokio",
+                "coordenadas": {
+                  "latitud": 35.671,
+                  "longitud": 139.764
+                },
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-03-31"
+                  }
+                ],
+                "restricciones": [],
+                "observaciones": [
+                  {
+                    "tipo": "incertidumbre",
+                    "descripcion": "No se informa disponibilidad de mesas ni se confirman reservas"
+                  }
+                ]
+              }
+            ],
+            "observaciones": []
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-02-12",
+            "fecha_fin": "2027-02-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "analista",
+            "instruccion": "Analizá las investigaciones existentes para el viaje a Tokio del 12 al 20 de febrero de 2027 de cuatro personas, con alojamiento, actividades y gastronomía. Evaluá ambas opciones de alojamiento, verificando capacidad y cobertura de fechas, y las tres opciones turísticas y gastronómicas, justificando su compatibilidad con lo solicitado. Presentá recomendaciones y limitaciones relevantes sin realizar nuevas búsquedas ni asumir preferencias adicionales. Distinguí la falta de información sobre mesas o reservas de una incompatibilidad; no se solicitaron reservas gastronómicas ni un día y horario concretos. No confirmes reservas.",
+            "evaluacion_supervisor": null
+          }
+        }
+      },
+      {
+        "nodo": "analista",
+        "actualizacion": {
+          "resultado_analisis": {
+            "sintesis_analisis": "Las dos opciones de alojamiento son compatibles para cuatro personas y cubren íntegramente la estadía del 12 al 20 de febrero de 2027. El museo y el mirador son recomendaciones de actividades compatibles, y el restaurante es una recomendación gastronómica compatible. No se informan restricciones que contradigan la solicitud ni se indicaron preferencias adicionales para priorizar opciones. La evaluación se basa exclusivamente en las investigaciones y comprobaciones recibidas y no confirma reservas.",
+            "resultados_evaluados": [
+              {
+                "opcion_id": "hotel-tokio-01",
+                "dominio": "hoteleria",
+                "clasificacion": "compatible",
+                "justificacion": "Hotel Sakura Central tiene capacidad para cuatro personas, suficiente para el grupo. Su período disponible del 1 al 28 de febrero de 2027 cubre íntegramente la estadía del 12 al 20 de febrero. La fuente indica disponibilidad y las comprobaciones confirman capacidad y compatibilidad temporal. Es una alternativa de alojamiento acorde con lo solicitado, sin que ello confirme una reserva.",
+                "distancia_km": 0.356
+              },
+              {
+                "opcion_id": "hotel-tokio-02",
+                "dominio": "hoteleria",
+                "clasificacion": "compatible",
+                "justificacion": "Residencia Aoi Familiar tiene capacidad para seis personas, suficiente para las cuatro del viaje. Su período disponible del 10 al 25 de febrero de 2027 cubre íntegramente la estadía solicitada. La fuente indica disponibilidad y las comprobaciones confirman capacidad y compatibilidad temporal. Es una alternativa válida de alojamiento; la capacidad adicional no implica una preferencia ni una reserva confirmada.",
+                "distancia_km": 0.98
+              },
+              {
+                "opcion_id": "turismo-tokio-01",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "Museo de la Ciudad Sakura es una actividad en Tokio cuyo período disponible, del 1 de febrero al 31 de marzo de 2027, incluye las fechas del viaje. No se informan restricciones que contradigan la solicitud. Puede recomendarse como visita para el grupo; el valor null de capacidad_suficiente no representa cupo insuficiente y no se solicitó admisión confirmada.",
+                "distancia_km": 0.819
+              },
+              {
+                "opcion_id": "turismo-tokio-02",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "Mirador Aoi es una actividad en Tokio disponible, según la fuente, del 1 de febrero al 31 de marzo de 2027, período que incluye el viaje. No se informan restricciones contrarias a lo solicitado. Es una recomendación compatible sin necesidad de confirmar cupos u horarios exactos, ya que no se pidieron entradas confirmadas ni un itinerario horario.",
+                "distancia_km": 0.672
+              },
+              {
+                "opcion_id": "turismo-tokio-03",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "Restaurante Jardín Sakura satisface el componente gastronómico en Tokio. Su período disponible del 1 de febrero al 31 de marzo de 2027 incluye las fechas del viaje y no presenta restricciones conocidas. La fuente no informa mesas disponibles ni confirma reservas, pero no se solicitó una reserva ni un día y horario concretos; por ello, esa incertidumbre no impide recomendarlo ni exige clasificarlo como pendiente de verificación.",
+                "distancia_km": 1.168
+              }
+            ],
+            "observaciones": [
+              {
+                "tipo": "incertidumbre",
+                "descripcion": "El Restaurante Jardín Sakura no informa disponibilidad de mesas ni confirma reservas. Se conserva esta incertidumbre como información, sin considerarla una incompatibilidad o una verificación indispensable para la recomendación general solicitada."
+              },
+              {
+                "tipo": "limitacion",
+                "descripcion": "Las recomendaciones se sustentan únicamente en los datos existentes y no constituyen confirmaciones de reservas de alojamiento, entradas o mesas."
+              },
+              {
+                "tipo": "limitacion",
+                "descripcion": "Las distancias reproducen las comprobaciones recibidas y son informativas. No se especifica su punto de referencia ni se aplican umbrales de distancia para clasificar las opciones."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-02-12",
+            "fecha_fin": "2027-02-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "finalizar",
+            "instruccion": "Publicar las recomendaciones analizadas para los tres componentes solicitados, aclarando que no constituyen reservas confirmadas.",
+            "evaluacion_supervisor": "aprobado"
+          },
+          "messages": [
+            {
+              "tipo": "ai",
+              "contenido": "Para su viaje a Tokio del 12 al 20 de febrero de 2027, para cuatro personas, estas son las opciones recomendadas según la información consultada:\n\n**Alojamiento**\n- **Hotel Sakura Central**, en Marunouchi: hotel de 4 estrellas con capacidad para cuatro personas y disponibilidad informada que cubre toda la estadía.\n- **Residencia Aoi Familiar**, en Nihonbashi: alojamiento de 3 estrellas con capacidad para seis personas, también disponible durante todo el período solicitado.\n\n**Actividades turísticas**\n- **Museo de la Ciudad Sakura**, en Kyobashi: una opción de visita cuyo período de disponibilidad incluye las fechas del viaje.\n- **Mirador Aoi**, en Otemachi: otra alternativa para conocer la ciudad, con disponibilidad informada durante su estadía.\n\n**Gastronomía**\n- **Restaurante Jardín Sakura**, en Ginza: una opción gastronómica cuyo período informado incluye las fechas del viaje, sin restricciones indicadas que contradigan lo solicitado.\n\nEstas recomendaciones no constituyen reservas confirmadas de alojamiento, entradas ni mesas. En particular, no se informa disponibilidad de mesas en el restaurante.",
+              "nombre": "supervisor"
+            }
+          ]
+        }
+      }
+    ],
+    "estado_final": {
+      "messages": [
+        {
+          "tipo": "human",
+          "contenido": "Quiero viajar a Tokio del 12 al 20 de febrero de 2027. Somos cuatro personas y buscamos alojamiento, actividades turísticas y gastronomía.",
+          "nombre": null
+        },
+        {
+          "tipo": "ai",
+          "contenido": "Para su viaje a Tokio del 12 al 20 de febrero de 2027, para cuatro personas, estas son las opciones recomendadas según la información consultada:\n\n**Alojamiento**\n- **Hotel Sakura Central**, en Marunouchi: hotel de 4 estrellas con capacidad para cuatro personas y disponibilidad informada que cubre toda la estadía.\n- **Residencia Aoi Familiar**, en Nihonbashi: alojamiento de 3 estrellas con capacidad para seis personas, también disponible durante todo el período solicitado.\n\n**Actividades turísticas**\n- **Museo de la Ciudad Sakura**, en Kyobashi: una opción de visita cuyo período de disponibilidad incluye las fechas del viaje.\n- **Mirador Aoi**, en Otemachi: otra alternativa para conocer la ciudad, con disponibilidad informada durante su estadía.\n\n**Gastronomía**\n- **Restaurante Jardín Sakura**, en Ginza: una opción gastronómica cuyo período informado incluye las fechas del viaje, sin restricciones indicadas que contradigan lo solicitado.\n\nEstas recomendaciones no constituyen reservas confirmadas de alojamiento, entradas ni mesas. En particular, no se informa disponibilidad de mesas en el restaurante.",
+          "nombre": "supervisor"
+        }
+      ],
+      "solicitud_original": {
+        "destino": "Tokio",
+        "fecha_inicio": "2027-02-12",
+        "fecha_fin": "2027-02-20",
+        "cantidad_personas": 4,
+        "componentes": [
+          "alojamiento",
+          "actividades",
+          "gastronomia"
+        ],
+        "preferencias": []
+      },
+      "resultado_hoteleria": {
+        "estado_busqueda": "completada",
+        "hoteles": [
+          {
+            "id": "hotel-tokio-01",
+            "nombre": "Hotel Sakura Central",
+            "fuente": "data/hoteles.json",
+            "direccion": "Sector de Marunouchi, Tokio",
+            "coordenadas": {
+              "latitud": 35.684,
+              "longitud": 139.769
+            },
+            "estrellas": 4,
+            "capacidad": 4,
+            "disponibilidad": "disponible_en_fuente",
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-02-28"
+              }
+            ],
+            "observaciones": []
+          },
+          {
+            "id": "hotel-tokio-02",
+            "nombre": "Residencia Aoi Familiar",
+            "fuente": "data/hoteles.json",
+            "direccion": "Sector de Nihonbashi, Tokio",
+            "coordenadas": {
+              "latitud": 35.688,
+              "longitud": 139.774
+            },
+            "estrellas": 3,
+            "capacidad": 6,
+            "disponibilidad": "disponible_en_fuente",
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-10",
+                "fin": "2027-02-25"
+              }
+            ],
+            "observaciones": []
+          }
+        ],
+        "observaciones": []
+      },
+      "resultado_turismo": {
+        "estado_busqueda": "completada",
+        "opciones": [
+          {
+            "id": "turismo-tokio-01",
+            "nombre": "Museo de la Ciudad Sakura",
+            "fuente": "data/turismo.json",
+            "categoria": "attraction",
+            "direccion": "Sector de Kyobashi, Tokio",
+            "coordenadas": {
+              "latitud": 35.675,
+              "longitud": 139.772
+            },
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-03-31"
+              }
+            ],
+            "restricciones": [],
+            "observaciones": []
+          },
+          {
+            "id": "turismo-tokio-02",
+            "nombre": "Mirador Aoi",
+            "fuente": "data/turismo.json",
+            "categoria": "viewpoint",
+            "direccion": "Sector de Otemachi, Tokio",
+            "coordenadas": {
+              "latitud": 35.687,
+              "longitud": 139.765
+            },
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-03-31"
+              }
+            ],
+            "restricciones": [],
+            "observaciones": []
+          },
+          {
+            "id": "turismo-tokio-03",
+            "nombre": "Restaurante Jardín Sakura",
+            "fuente": "data/turismo.json",
+            "categoria": "gastronomy",
+            "direccion": "Sector de Ginza, Tokio",
+            "coordenadas": {
+              "latitud": 35.671,
+              "longitud": 139.764
+            },
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-03-31"
+              }
+            ],
+            "restricciones": [],
+            "observaciones": [
+              {
+                "tipo": "incertidumbre",
+                "descripcion": "No se informa disponibilidad de mesas ni se confirman reservas"
+              }
+            ]
+          }
+        ],
+        "observaciones": []
+      },
+      "resultado_analisis": {
+        "sintesis_analisis": "Las dos opciones de alojamiento son compatibles para cuatro personas y cubren íntegramente la estadía del 12 al 20 de febrero de 2027. El museo y el mirador son recomendaciones de actividades compatibles, y el restaurante es una recomendación gastronómica compatible. No se informan restricciones que contradigan la solicitud ni se indicaron preferencias adicionales para priorizar opciones. La evaluación se basa exclusivamente en las investigaciones y comprobaciones recibidas y no confirma reservas.",
+        "resultados_evaluados": [
+          {
+            "opcion_id": "hotel-tokio-01",
+            "dominio": "hoteleria",
+            "clasificacion": "compatible",
+            "justificacion": "Hotel Sakura Central tiene capacidad para cuatro personas, suficiente para el grupo. Su período disponible del 1 al 28 de febrero de 2027 cubre íntegramente la estadía del 12 al 20 de febrero. La fuente indica disponibilidad y las comprobaciones confirman capacidad y compatibilidad temporal. Es una alternativa de alojamiento acorde con lo solicitado, sin que ello confirme una reserva.",
+            "distancia_km": 0.356
+          },
+          {
+            "opcion_id": "hotel-tokio-02",
+            "dominio": "hoteleria",
+            "clasificacion": "compatible",
+            "justificacion": "Residencia Aoi Familiar tiene capacidad para seis personas, suficiente para las cuatro del viaje. Su período disponible del 10 al 25 de febrero de 2027 cubre íntegramente la estadía solicitada. La fuente indica disponibilidad y las comprobaciones confirman capacidad y compatibilidad temporal. Es una alternativa válida de alojamiento; la capacidad adicional no implica una preferencia ni una reserva confirmada.",
+            "distancia_km": 0.98
+          },
+          {
+            "opcion_id": "turismo-tokio-01",
+            "dominio": "turismo",
+            "clasificacion": "compatible",
+            "justificacion": "Museo de la Ciudad Sakura es una actividad en Tokio cuyo período disponible, del 1 de febrero al 31 de marzo de 2027, incluye las fechas del viaje. No se informan restricciones que contradigan la solicitud. Puede recomendarse como visita para el grupo; el valor null de capacidad_suficiente no representa cupo insuficiente y no se solicitó admisión confirmada.",
+            "distancia_km": 0.819
+          },
+          {
+            "opcion_id": "turismo-tokio-02",
+            "dominio": "turismo",
+            "clasificacion": "compatible",
+            "justificacion": "Mirador Aoi es una actividad en Tokio disponible, según la fuente, del 1 de febrero al 31 de marzo de 2027, período que incluye el viaje. No se informan restricciones contrarias a lo solicitado. Es una recomendación compatible sin necesidad de confirmar cupos u horarios exactos, ya que no se pidieron entradas confirmadas ni un itinerario horario.",
+            "distancia_km": 0.672
+          },
+          {
+            "opcion_id": "turismo-tokio-03",
+            "dominio": "turismo",
+            "clasificacion": "compatible",
+            "justificacion": "Restaurante Jardín Sakura satisface el componente gastronómico en Tokio. Su período disponible del 1 de febrero al 31 de marzo de 2027 incluye las fechas del viaje y no presenta restricciones conocidas. La fuente no informa mesas disponibles ni confirma reservas, pero no se solicitó una reserva ni un día y horario concretos; por ello, esa incertidumbre no impide recomendarlo ni exige clasificarlo como pendiente de verificación.",
+            "distancia_km": 1.168
+          }
+        ],
+        "observaciones": [
+          {
+            "tipo": "incertidumbre",
+            "descripcion": "El Restaurante Jardín Sakura no informa disponibilidad de mesas ni confirma reservas. Se conserva esta incertidumbre como información, sin considerarla una incompatibilidad o una verificación indispensable para la recomendación general solicitada."
+          },
+          {
+            "tipo": "limitacion",
+            "descripcion": "Las recomendaciones se sustentan únicamente en los datos existentes y no constituyen confirmaciones de reservas de alojamiento, entradas o mesas."
+          },
+          {
+            "tipo": "limitacion",
+            "descripcion": "Las distancias reproducen las comprobaciones recibidas y son informativas. No se especifica su punto de referencia ni se aplican umbrales de distancia para clasificar las opciones."
+          }
+        ]
+      },
+      "refinamientos_analista": 0,
+      "decision_supervisor": {
+        "next_agent": "finalizar",
+        "instruccion": "Publicar las recomendaciones analizadas para los tres componentes solicitados, aclarando que no constituyen reservas confirmadas.",
+        "evaluacion_supervisor": "aprobado"
+      }
+    }
+  },
+  "respuesta_parcial": {
+    "solicitud_usuario": "Quiero viajar a Tokio del 12 al 20 de marzo de 2027. Somos cuatro personas y buscamos alojamiento, actividades turísticas y gastronomía.",
+    "thread_id": "respuesta_parcial-5bb1620795504ef58310f846f54077a0",
+    "eventos": [
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-03-12",
+            "fecha_fin": "2027-03-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "hoteleria",
+            "instruccion": "Investigá opciones de alojamiento en Tokio para cuatro personas del 12 al 20 de marzo de 2027. Verificá que la capacidad del alojamiento o de la combinación de habitaciones cubra al grupo y señalá las limitaciones de la información disponible para esas fechas.",
+            "evaluacion_supervisor": null
+          }
+        }
+      },
+      {
+        "nodo": "hoteleria",
+        "actualizacion": {
+          "resultado_hoteleria": {
+            "estado_busqueda": "completada",
+            "hoteles": [
+              {
+                "id": "hotel-tokio-01",
+                "nombre": "Hotel Sakura Central",
+                "fuente": "data/hoteles.json",
+                "direccion": "Sector de Marunouchi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.684,
+                  "longitud": 139.769
+                },
+                "estrellas": 4,
+                "capacidad": 4,
+                "disponibilidad": "disponible_en_fuente",
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-02-28"
+                  }
+                ],
+                "observaciones": []
+              },
+              {
+                "id": "hotel-tokio-02",
+                "nombre": "Residencia Aoi Familiar",
+                "fuente": "data/hoteles.json",
+                "direccion": "Sector de Nihonbashi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.688,
+                  "longitud": 139.774
+                },
+                "estrellas": 3,
+                "capacidad": 6,
+                "disponibilidad": "disponible_en_fuente",
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-10",
+                    "fin": "2027-02-25"
+                  }
+                ],
+                "observaciones": []
+              }
+            ],
+            "observaciones": []
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-03-12",
+            "fecha_fin": "2027-03-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "turismo",
+            "instruccion": "Investigá actividades turísticas y opciones gastronómicas en Tokio para el viaje de cuatro personas del 12 al 20 de marzo de 2027. Describí las opciones y señalá las limitaciones relevantes de la información consultada para esas fechas.",
+            "evaluacion_supervisor": null
+          }
+        }
+      },
+      {
+        "nodo": "turismo",
+        "actualizacion": {
+          "resultado_turismo": {
+            "estado_busqueda": "completada",
+            "opciones": [
+              {
+                "id": "turismo-tokio-01",
+                "nombre": "Museo de la Ciudad Sakura",
+                "fuente": "data/turismo.json",
+                "categoria": "attraction",
+                "direccion": "Sector de Kyobashi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.675,
+                  "longitud": 139.772
+                },
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-03-31"
+                  }
+                ],
+                "restricciones": [],
+                "observaciones": []
+              },
+              {
+                "id": "turismo-tokio-02",
+                "nombre": "Mirador Aoi",
+                "fuente": "data/turismo.json",
+                "categoria": "viewpoint",
+                "direccion": "Sector de Otemachi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.687,
+                  "longitud": 139.765
+                },
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-03-31"
+                  }
+                ],
+                "restricciones": [],
+                "observaciones": []
+              },
+              {
+                "id": "turismo-tokio-03",
+                "nombre": "Restaurante Jardín Sakura",
+                "fuente": "data/turismo.json",
+                "categoria": "gastronomy",
+                "direccion": "Sector de Ginza, Tokio",
+                "coordenadas": {
+                  "latitud": 35.671,
+                  "longitud": 139.764
+                },
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-03-31"
+                  }
+                ],
+                "restricciones": [],
+                "observaciones": [
+                  {
+                    "tipo": "incertidumbre",
+                    "descripcion": "No se informa disponibilidad de mesas ni se confirman reservas"
+                  }
+                ]
+              }
+            ],
+            "observaciones": []
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-03-12",
+            "fecha_fin": "2027-03-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "analista",
+            "instruccion": "Analizá las investigaciones existentes para el viaje a Tokio de cuatro personas del 12 al 20 de marzo de 2027, cubriendo alojamiento, actividades turísticas y gastronomía. Evaluá todas las opciones según las fechas solicitadas y, para el alojamiento, la capacidad del grupo. Justificá su compatibilidad o las limitaciones para determinarla, distinguiendo falta de datos de incompatibilidad. Conservá las recomendaciones válidas aunque otro componente quede sin resolver y limitá las conclusiones sobre alojamiento a la información consultada. La ausencia de confirmación de mesas o reservas gastronómicas no constituye por sí sola un incumplimiento de la solicitud. No realices nuevas búsquedas ni confirmes reservas.",
+            "evaluacion_supervisor": null
+          }
+        }
+      },
+      {
+        "nodo": "analista",
+        "actualizacion": {
+          "resultado_analisis": {
+            "sintesis_analisis": "Los dos alojamientos consultados tienen capacidad suficiente para cuatro personas, pero sus períodos disponibles no cubren el viaje del 12 al 20 de marzo de 2027, por lo que resultan incompatibles. Las dos actividades turísticas y la opción gastronómica son compatibles con las fechas y no presentan restricciones conocidas que contradigan la solicitud. Estas recomendaciones conservan su validez aunque el alojamiento quede sin resolver.",
+            "resultados_evaluados": [
+              {
+                "opcion_id": "hotel-tokio-01",
+                "dominio": "hoteleria",
+                "clasificacion": "incompatible",
+                "justificacion": "Hotel Sakura Central tiene capacidad para cuatro personas, suficiente para el grupo. Sin embargo, el único período disponible informado es del 1 al 28 de febrero de 2027 y no cubre ninguna noche de la estadía solicitada del 12 al 20 de marzo. La indicación general de disponibilidad en la fuente no implica disponibilidad para las fechas del viaje.",
+                "distancia_km": 0.356
+              },
+              {
+                "opcion_id": "hotel-tokio-02",
+                "dominio": "hoteleria",
+                "clasificacion": "incompatible",
+                "justificacion": "Residencia Aoi Familiar tiene capacidad para seis personas, suficiente para el grupo de cuatro. No obstante, su período disponible informado, del 10 al 25 de febrero de 2027, no cubre la estadía del 12 al 20 de marzo. La incompatibilidad es temporal, no de capacidad.",
+                "distancia_km": 0.98
+              },
+              {
+                "opcion_id": "turismo-tokio-01",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "El Museo de la Ciudad Sakura está disponible del 1 de febrero al 31 de marzo de 2027, período que incluye las fechas del viaje. No se informan restricciones que contradigan la visita del grupo. Para esta recomendación general no se requiere confirmar cupos ni reservas.",
+                "distancia_km": 0.819
+              },
+              {
+                "opcion_id": "turismo-tokio-02",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "El Mirador Aoi está disponible del 1 de febrero al 31 de marzo de 2027, por lo que puede visitarse durante el viaje. No constan restricciones que contradigan la solicitud; la ausencia de una comprobación de capacidad no constituye un impedimento para esta recomendación turística.",
+                "distancia_km": 0.672
+              },
+              {
+                "opcion_id": "turismo-tokio-03",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "El Restaurante Jardín Sakura ofrece cobertura temporal del 1 de febrero al 31 de marzo de 2027, que incluye la estadía, y no presenta restricciones conocidas contrarias a la solicitud. No se informa disponibilidad de mesas ni se confirman reservas, pero no se pidió una comida en un día y horario concretos ni una reserva confirmada; esa incertidumbre no impide recomendarlo.",
+                "distancia_km": 1.168
+              }
+            ],
+            "observaciones": [
+              {
+                "tipo": "limitacion",
+                "descripcion": "La conclusión sobre alojamiento se limita a los dos establecimientos y períodos consultados. No permite afirmar que no existan otros alojamientos disponibles en Tokio para las fechas solicitadas."
+              },
+              {
+                "tipo": "incertidumbre",
+                "descripcion": "La disponibilidad de mesas y las reservas del Restaurante Jardín Sakura no están confirmadas. Se conserva como recomendación gastronómica compatible, sin asegurar una mesa."
+              },
+              {
+                "tipo": "limitacion",
+                "descripcion": "Las distancias reproducen los cálculos recibidos y son informativas; no se aplicó ningún umbral de distancia para determinar compatibilidad."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-03-12",
+            "fecha_fin": "2027-03-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "finalizar",
+            "instruccion": "Presentar las recomendaciones de actividades y gastronomía compatibles, aclarando que el alojamiento sigue sin resolverse porque los períodos informados para los dos establecimientos consultados no cubren el viaje.",
+            "evaluacion_supervisor": "aprobado_con_advertencias"
+          },
+          "messages": [
+            {
+              "tipo": "ai",
+              "contenido": "Para su viaje a **Tokio, del 12 al 20 de marzo de 2027, para cuatro personas**, estas son las opciones recomendadas según la información consultada:\n\n**Actividades turísticas**\n- **Museo de la Ciudad Sakura**, en Kyobashi: su período informado incluye las fechas del viaje y no constan restricciones contrarias a la visita.\n- **Mirador Aoi**, en Otemachi: también tiene un período informado compatible con su estadía.\n\n**Gastronomía**\n- **Restaurante Jardín Sakura**, en Ginza: es una opción compatible con las fechas. No se ha confirmado disponibilidad de mesas ni realizado una reserva.\n\n**Alojamiento: pendiente de resolver**\nLos dos establecimientos consultados tienen capacidad suficiente, pero los períodos disponibles informados corresponden únicamente a febrero de 2027: Hotel Sakura Central, del 1 al 28, y Residencia Aoi Familiar, del 10 al 25. Por eso, no son opciones compatibles con su estadía de marzo según estos datos.\n\nEsta limitación se refiere únicamente a los alojamientos consultados: **no significa que no haya otros hoteles disponibles en Tokio**. Será necesario ampliar la búsqueda de alojamiento para completar el viaje.",
+              "nombre": "supervisor"
+            }
+          ]
+        }
+      }
+    ],
+    "estado_final": {
+      "messages": [
+        {
+          "tipo": "human",
+          "contenido": "Quiero viajar a Tokio del 12 al 20 de marzo de 2027. Somos cuatro personas y buscamos alojamiento, actividades turísticas y gastronomía.",
+          "nombre": null
+        },
+        {
+          "tipo": "ai",
+          "contenido": "Para su viaje a **Tokio, del 12 al 20 de marzo de 2027, para cuatro personas**, estas son las opciones recomendadas según la información consultada:\n\n**Actividades turísticas**\n- **Museo de la Ciudad Sakura**, en Kyobashi: su período informado incluye las fechas del viaje y no constan restricciones contrarias a la visita.\n- **Mirador Aoi**, en Otemachi: también tiene un período informado compatible con su estadía.\n\n**Gastronomía**\n- **Restaurante Jardín Sakura**, en Ginza: es una opción compatible con las fechas. No se ha confirmado disponibilidad de mesas ni realizado una reserva.\n\n**Alojamiento: pendiente de resolver**\nLos dos establecimientos consultados tienen capacidad suficiente, pero los períodos disponibles informados corresponden únicamente a febrero de 2027: Hotel Sakura Central, del 1 al 28, y Residencia Aoi Familiar, del 10 al 25. Por eso, no son opciones compatibles con su estadía de marzo según estos datos.\n\nEsta limitación se refiere únicamente a los alojamientos consultados: **no significa que no haya otros hoteles disponibles en Tokio**. Será necesario ampliar la búsqueda de alojamiento para completar el viaje.",
+          "nombre": "supervisor"
+        }
+      ],
+      "solicitud_original": {
+        "destino": "Tokio",
+        "fecha_inicio": "2027-03-12",
+        "fecha_fin": "2027-03-20",
+        "cantidad_personas": 4,
+        "componentes": [
+          "alojamiento",
+          "actividades",
+          "gastronomia"
+        ],
+        "preferencias": []
+      },
+      "resultado_hoteleria": {
+        "estado_busqueda": "completada",
+        "hoteles": [
+          {
+            "id": "hotel-tokio-01",
+            "nombre": "Hotel Sakura Central",
+            "fuente": "data/hoteles.json",
+            "direccion": "Sector de Marunouchi, Tokio",
+            "coordenadas": {
+              "latitud": 35.684,
+              "longitud": 139.769
+            },
+            "estrellas": 4,
+            "capacidad": 4,
+            "disponibilidad": "disponible_en_fuente",
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-02-28"
+              }
+            ],
+            "observaciones": []
+          },
+          {
+            "id": "hotel-tokio-02",
+            "nombre": "Residencia Aoi Familiar",
+            "fuente": "data/hoteles.json",
+            "direccion": "Sector de Nihonbashi, Tokio",
+            "coordenadas": {
+              "latitud": 35.688,
+              "longitud": 139.774
+            },
+            "estrellas": 3,
+            "capacidad": 6,
+            "disponibilidad": "disponible_en_fuente",
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-10",
+                "fin": "2027-02-25"
+              }
+            ],
+            "observaciones": []
+          }
+        ],
+        "observaciones": []
+      },
+      "resultado_turismo": {
+        "estado_busqueda": "completada",
+        "opciones": [
+          {
+            "id": "turismo-tokio-01",
+            "nombre": "Museo de la Ciudad Sakura",
+            "fuente": "data/turismo.json",
+            "categoria": "attraction",
+            "direccion": "Sector de Kyobashi, Tokio",
+            "coordenadas": {
+              "latitud": 35.675,
+              "longitud": 139.772
+            },
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-03-31"
+              }
+            ],
+            "restricciones": [],
+            "observaciones": []
+          },
+          {
+            "id": "turismo-tokio-02",
+            "nombre": "Mirador Aoi",
+            "fuente": "data/turismo.json",
+            "categoria": "viewpoint",
+            "direccion": "Sector de Otemachi, Tokio",
+            "coordenadas": {
+              "latitud": 35.687,
+              "longitud": 139.765
+            },
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-03-31"
+              }
+            ],
+            "restricciones": [],
+            "observaciones": []
+          },
+          {
+            "id": "turismo-tokio-03",
+            "nombre": "Restaurante Jardín Sakura",
+            "fuente": "data/turismo.json",
+            "categoria": "gastronomy",
+            "direccion": "Sector de Ginza, Tokio",
+            "coordenadas": {
+              "latitud": 35.671,
+              "longitud": 139.764
+            },
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-03-31"
+              }
+            ],
+            "restricciones": [],
+            "observaciones": [
+              {
+                "tipo": "incertidumbre",
+                "descripcion": "No se informa disponibilidad de mesas ni se confirman reservas"
+              }
+            ]
+          }
+        ],
+        "observaciones": []
+      },
+      "resultado_analisis": {
+        "sintesis_analisis": "Los dos alojamientos consultados tienen capacidad suficiente para cuatro personas, pero sus períodos disponibles no cubren el viaje del 12 al 20 de marzo de 2027, por lo que resultan incompatibles. Las dos actividades turísticas y la opción gastronómica son compatibles con las fechas y no presentan restricciones conocidas que contradigan la solicitud. Estas recomendaciones conservan su validez aunque el alojamiento quede sin resolver.",
+        "resultados_evaluados": [
+          {
+            "opcion_id": "hotel-tokio-01",
+            "dominio": "hoteleria",
+            "clasificacion": "incompatible",
+            "justificacion": "Hotel Sakura Central tiene capacidad para cuatro personas, suficiente para el grupo. Sin embargo, el único período disponible informado es del 1 al 28 de febrero de 2027 y no cubre ninguna noche de la estadía solicitada del 12 al 20 de marzo. La indicación general de disponibilidad en la fuente no implica disponibilidad para las fechas del viaje.",
+            "distancia_km": 0.356
+          },
+          {
+            "opcion_id": "hotel-tokio-02",
+            "dominio": "hoteleria",
+            "clasificacion": "incompatible",
+            "justificacion": "Residencia Aoi Familiar tiene capacidad para seis personas, suficiente para el grupo de cuatro. No obstante, su período disponible informado, del 10 al 25 de febrero de 2027, no cubre la estadía del 12 al 20 de marzo. La incompatibilidad es temporal, no de capacidad.",
+            "distancia_km": 0.98
+          },
+          {
+            "opcion_id": "turismo-tokio-01",
+            "dominio": "turismo",
+            "clasificacion": "compatible",
+            "justificacion": "El Museo de la Ciudad Sakura está disponible del 1 de febrero al 31 de marzo de 2027, período que incluye las fechas del viaje. No se informan restricciones que contradigan la visita del grupo. Para esta recomendación general no se requiere confirmar cupos ni reservas.",
+            "distancia_km": 0.819
+          },
+          {
+            "opcion_id": "turismo-tokio-02",
+            "dominio": "turismo",
+            "clasificacion": "compatible",
+            "justificacion": "El Mirador Aoi está disponible del 1 de febrero al 31 de marzo de 2027, por lo que puede visitarse durante el viaje. No constan restricciones que contradigan la solicitud; la ausencia de una comprobación de capacidad no constituye un impedimento para esta recomendación turística.",
+            "distancia_km": 0.672
+          },
+          {
+            "opcion_id": "turismo-tokio-03",
+            "dominio": "turismo",
+            "clasificacion": "compatible",
+            "justificacion": "El Restaurante Jardín Sakura ofrece cobertura temporal del 1 de febrero al 31 de marzo de 2027, que incluye la estadía, y no presenta restricciones conocidas contrarias a la solicitud. No se informa disponibilidad de mesas ni se confirman reservas, pero no se pidió una comida en un día y horario concretos ni una reserva confirmada; esa incertidumbre no impide recomendarlo.",
+            "distancia_km": 1.168
+          }
+        ],
+        "observaciones": [
+          {
+            "tipo": "limitacion",
+            "descripcion": "La conclusión sobre alojamiento se limita a los dos establecimientos y períodos consultados. No permite afirmar que no existan otros alojamientos disponibles en Tokio para las fechas solicitadas."
+          },
+          {
+            "tipo": "incertidumbre",
+            "descripcion": "La disponibilidad de mesas y las reservas del Restaurante Jardín Sakura no están confirmadas. Se conserva como recomendación gastronómica compatible, sin asegurar una mesa."
+          },
+          {
+            "tipo": "limitacion",
+            "descripcion": "Las distancias reproducen los cálculos recibidos y son informativas; no se aplicó ningún umbral de distancia para determinar compatibilidad."
+          }
+        ]
+      },
+      "refinamientos_analista": 0,
+      "decision_supervisor": {
+        "next_agent": "finalizar",
+        "instruccion": "Presentar las recomendaciones de actividades y gastronomía compatibles, aclarando que el alojamiento sigue sin resolverse porque los períodos informados para los dos establecimientos consultados no cubren el viaje.",
+        "evaluacion_supervisor": "aprobado_con_advertencias"
+      }
+    }
+  },
+  "prueba_refinamiento_controlado": {
+    "solicitud_usuario": "Quiero viajar a Tokio del 12 al 20 de febrero de 2027. Somos cuatro personas y buscamos alojamiento, actividades turísticas y gastronomía.",
+    "thread_id": "prueba_refinamiento_controlado-5bb1620795504ef58310f846f54077a0",
+    "eventos": [
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-02-12",
+            "fecha_fin": "2027-02-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "hoteleria",
+            "instruccion": "Investigá opciones de alojamiento en Tokio del 12 al 20 de febrero de 2027 para cuatro personas. Verificá la compatibilidad con las fechas y que la capacidad del alojamiento o de la combinación de habitaciones cubra al grupo, indicando las limitaciones de la información disponible.",
+            "evaluacion_supervisor": null
+          }
+        }
+      },
+      {
+        "nodo": "hoteleria",
+        "actualizacion": {
+          "resultado_hoteleria": {
+            "estado_busqueda": "completada",
+            "hoteles": [
+              {
+                "id": "hotel-tokio-01",
+                "nombre": "Hotel Sakura Central",
+                "fuente": "data/hoteles.json",
+                "direccion": "Sector de Marunouchi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.684,
+                  "longitud": 139.769
+                },
+                "estrellas": 4,
+                "capacidad": 4,
+                "disponibilidad": "disponible_en_fuente",
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-02-28"
+                  }
+                ],
+                "observaciones": []
+              },
+              {
+                "id": "hotel-tokio-02",
+                "nombre": "Residencia Aoi Familiar",
+                "fuente": "data/hoteles.json",
+                "direccion": "Sector de Nihonbashi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.688,
+                  "longitud": 139.774
+                },
+                "estrellas": 3,
+                "capacidad": 6,
+                "disponibilidad": "disponible_en_fuente",
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-10",
+                    "fin": "2027-02-25"
+                  }
+                ],
+                "observaciones": []
+              }
+            ],
+            "observaciones": []
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-02-12",
+            "fecha_fin": "2027-02-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "turismo",
+            "instruccion": "Investigá opciones de actividades turísticas y gastronomía en Tokio para el viaje del 12 al 20 de febrero de 2027 de cuatro personas. Indicá las características de las opciones y las limitaciones de la información disponible para esas fechas, sin asumir preferencias no expresadas.",
+            "evaluacion_supervisor": null
+          }
+        }
+      },
+      {
+        "nodo": "turismo",
+        "actualizacion": {
+          "resultado_turismo": {
+            "estado_busqueda": "completada",
+            "opciones": [
+              {
+                "id": "turismo-tokio-01",
+                "nombre": "Museo de la Ciudad Sakura",
+                "fuente": "data/turismo.json",
+                "categoria": "attraction",
+                "direccion": "Sector de Kyobashi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.675,
+                  "longitud": 139.772
+                },
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-03-31"
+                  }
+                ],
+                "restricciones": [],
+                "observaciones": []
+              },
+              {
+                "id": "turismo-tokio-02",
+                "nombre": "Mirador Aoi",
+                "fuente": "data/turismo.json",
+                "categoria": "viewpoint",
+                "direccion": "Sector de Otemachi, Tokio",
+                "coordenadas": {
+                  "latitud": 35.687,
+                  "longitud": 139.765
+                },
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-03-31"
+                  }
+                ],
+                "restricciones": [],
+                "observaciones": []
+              },
+              {
+                "id": "turismo-tokio-03",
+                "nombre": "Restaurante Jardín Sakura",
+                "fuente": "data/turismo.json",
+                "categoria": "gastronomy",
+                "direccion": "Sector de Ginza, Tokio",
+                "coordenadas": {
+                  "latitud": 35.671,
+                  "longitud": 139.764
+                },
+                "periodos_disponibles": [
+                  {
+                    "inicio": "2027-02-01",
+                    "fin": "2027-03-31"
+                  }
+                ],
+                "restricciones": [],
+                "observaciones": [
+                  {
+                    "tipo": "incertidumbre",
+                    "descripcion": "No se informa disponibilidad de mesas ni se confirman reservas"
+                  }
+                ]
+              }
+            ],
+            "observaciones": []
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-02-12",
+            "fecha_fin": "2027-02-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "analista",
+            "instruccion": "Analizá las investigaciones existentes para el viaje a Tokio del 12 al 20 de febrero de 2027 de cuatro personas, cubriendo alojamiento, actividades turísticas y gastronomía. Evaluá ambas opciones de alojamiento, las dos actividades y el restaurante; justificá su compatibilidad con las fechas y, para el alojamiento, con la capacidad del grupo. Formulá recomendaciones sin asumir preferencias adicionales y distinguí las limitaciones de información de las incompatibilidades. La falta de información sobre mesas o reservas del restaurante no implica incompatibilidad: no se solicitaron reservas ni un día y horario gastronómicos concretos. Usá únicamente los resultados disponibles y no confirmes reservas.",
+            "evaluacion_supervisor": null
+          }
+        }
+      },
+      {
+        "nodo": "analista",
+        "actualizacion": {
+          "resultado_analisis": {
+            "sintesis_analisis": "Las dos opciones de alojamiento cubren íntegramente la estadía del 12 al 20 de febrero de 2027 y tienen capacidad para cuatro personas. Las dos actividades y el restaurante también son compatibles con las fechas según los períodos informados y no presentan restricciones conocidas. Se recomiendan como alternativas válidas, sin establecer prioridades porque no se indicaron preferencias. La evaluación se basa exclusivamente en las fuentes y comprobaciones recibidas y no confirma reservas.",
+            "resultados_evaluados": [
+              {
+                "opcion_id": "hotel-tokio-01",
+                "dominio": "hoteleria",
+                "clasificacion": "compatible",
+                "justificacion": "Hotel Sakura Central figura disponible del 1 al 28 de febrero de 2027, período que cubre toda la estadía solicitada. Su capacidad de cuatro personas alcanza para el grupo completo; ambas condiciones están corroboradas por las comprobaciones. Es una alternativa válida de alojamiento, sin reserva confirmada.",
+                "distancia_km": 0.356
+              },
+              {
+                "opcion_id": "hotel-tokio-02",
+                "dominio": "hoteleria",
+                "clasificacion": "compatible",
+                "justificacion": "Residencia Aoi Familiar figura disponible del 10 al 25 de febrero de 2027, cubriendo íntegramente el viaje. Su capacidad de seis personas es suficiente para las cuatro solicitadas; las comprobaciones confirman compatibilidad temporal y capacidad. Es una alternativa válida de alojamiento, sin que su mayor capacidad implique una preferencia del grupo ni una reserva confirmada.",
+                "distancia_km": 0.98
+              },
+              {
+                "opcion_id": "turismo-tokio-01",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "Museo de la Ciudad Sakura tiene un período disponible del 1 de febrero al 31 de marzo de 2027, que permite visitarlo durante el viaje. La comprobación temporal es positiva y no se informan restricciones. Se recomienda como actividad posible; no se requiere confirmar cupos para esta recomendación general.",
+                "distancia_km": 0.819
+              },
+              {
+                "opcion_id": "turismo-tokio-02",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "Mirador Aoi tiene disponibilidad informada del 1 de febrero al 31 de marzo de 2027, compatible con una visita durante la estadía. La comprobación temporal es positiva y no hay restricciones conocidas. Se recomienda como otra actividad posible, sin asumir preferencias ni confirmar acceso o reservas.",
+                "distancia_km": 0.672
+              }
+            ],
+            "observaciones": [
+              {
+                "tipo": "incertidumbre",
+                "descripcion": "El restaurante no informa disponibilidad de mesas ni confirma reservas. Esta incertidumbre se conserva como información y no constituye una incompatibilidad ni requiere dejar pendiente la recomendación general."
+              },
+              {
+                "tipo": "limitacion",
+                "descripcion": "Las disponibilidades corresponden a los períodos informados en las fuentes; este análisis no confirma reservas de alojamiento, actividades ni gastronomía."
+              },
+              {
+                "tipo": "limitacion",
+                "descripcion": "Las distancias se reproducen de las comprobaciones recibidas como datos informativos. No se especifica su punto de referencia y no se utilizan para imponer umbrales o priorizar opciones."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-02-12",
+            "fecha_fin": "2027-02-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "analista",
+            "instruccion": "Completá el análisis incorporando la evaluación individual omitida del Restaurante Jardín Sakura y su recomendación gastronómica. Justificá su clasificación con el período informado, del 1 de febrero al 31 de marzo de 2027, y la ausencia de restricciones conocidas para el viaje del 12 al 20 de febrero. La falta de información sobre mesas o reservas no implica incompatibilidad ni impide una recomendación general, ya que no se solicitaron reservas gastronómicas. Conservá las evaluaciones válidas de los dos alojamientos y las dos actividades. Usá únicamente la solicitud y las investigaciones existentes, sin nuevas búsquedas ni requisitos adicionales.",
+            "evaluacion_supervisor": null
+          },
+          "refinamientos_analista": 1
+        }
+      },
+      {
+        "nodo": "analista",
+        "actualizacion": {
+          "resultado_analisis": {
+            "sintesis_analisis": "Los dos alojamientos cubren íntegramente la estadía del 12 al 20 de febrero de 2027 y tienen capacidad para cuatro personas. Las dos actividades y el Restaurante Jardín Sakura también son compatibles con las fechas y no presentan restricciones conocidas. Se recomiendan como alternativas válidas de alojamiento, actividades y gastronomía, sin establecer prioridades porque no se indicaron preferencias. La evaluación utiliza exclusivamente las investigaciones y comprobaciones recibidas y no confirma reservas.",
+            "resultados_evaluados": [
+              {
+                "opcion_id": "hotel-tokio-01",
+                "dominio": "hoteleria",
+                "clasificacion": "compatible",
+                "justificacion": "Hotel Sakura Central figura disponible del 1 al 28 de febrero de 2027, período que cubre toda la estadía solicitada. Su capacidad de cuatro personas alcanza para el grupo completo; ambas condiciones están corroboradas por las comprobaciones. Es una alternativa válida de alojamiento, sin reserva confirmada.",
+                "distancia_km": 0.356
+              },
+              {
+                "opcion_id": "hotel-tokio-02",
+                "dominio": "hoteleria",
+                "clasificacion": "compatible",
+                "justificacion": "Residencia Aoi Familiar figura disponible del 10 al 25 de febrero de 2027, cubriendo íntegramente el viaje. Su capacidad de seis personas es suficiente para las cuatro solicitadas; las comprobaciones confirman compatibilidad temporal y capacidad. Es una alternativa válida de alojamiento, sin que su mayor capacidad implique una preferencia del grupo ni una reserva confirmada.",
+                "distancia_km": 0.98
+              },
+              {
+                "opcion_id": "turismo-tokio-01",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "Museo de la Ciudad Sakura tiene un período disponible del 1 de febrero al 31 de marzo de 2027, que permite visitarlo durante el viaje. La comprobación temporal es positiva y no se informan restricciones. Se recomienda como actividad posible; no se requiere confirmar cupos para esta recomendación general.",
+                "distancia_km": 0.819
+              },
+              {
+                "opcion_id": "turismo-tokio-02",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "Mirador Aoi tiene disponibilidad informada del 1 de febrero al 31 de marzo de 2027, compatible con una visita durante la estadía. La comprobación temporal es positiva y no hay restricciones conocidas. Se recomienda como otra actividad posible, sin asumir preferencias ni confirmar acceso o reservas.",
+                "distancia_km": 0.672
+              },
+              {
+                "opcion_id": "turismo-tokio-03",
+                "dominio": "turismo",
+                "clasificacion": "compatible",
+                "justificacion": "Restaurante Jardín Sakura tiene disponibilidad informada del 1 de febrero al 31 de marzo de 2027, período que incluye el viaje del 12 al 20 de febrero. La comprobación temporal es positiva y no se informan restricciones que contradigan la solicitud. Se recomienda como alternativa gastronómica general. No se informa disponibilidad de mesas ni se confirman reservas, pero no se solicitaron reservas gastronómicas ni un día y horario concretos; esa incertidumbre no impide la recomendación ni requiere dejarla pendiente de verificación.",
+                "distancia_km": 1.168
+              }
+            ],
+            "observaciones": [
+              {
+                "tipo": "incertidumbre",
+                "descripcion": "El Restaurante Jardín Sakura no informa disponibilidad de mesas ni confirma reservas. Esta incertidumbre se conserva como información y no constituye una incompatibilidad ni requiere dejar pendiente la recomendación gastronómica general."
+              },
+              {
+                "tipo": "limitacion",
+                "descripcion": "Las disponibilidades corresponden a los períodos informados en las fuentes; este análisis no confirma reservas de alojamiento, actividades ni gastronomía."
+              },
+              {
+                "tipo": "limitacion",
+                "descripcion": "Las distancias se reproducen de las comprobaciones recibidas como datos informativos. No se especifica su punto de referencia y no se utilizan para imponer umbrales o priorizar opciones."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "nodo": "supervisor",
+        "actualizacion": {
+          "solicitud_original": {
+            "destino": "Tokio",
+            "fecha_inicio": "2027-02-12",
+            "fecha_fin": "2027-02-20",
+            "cantidad_personas": 4,
+            "componentes": [
+              "alojamiento",
+              "actividades",
+              "gastronomia"
+            ],
+            "preferencias": []
+          },
+          "decision_supervisor": {
+            "next_agent": "finalizar",
+            "instruccion": "Presentar las dos alternativas de alojamiento, las dos actividades y la opción gastronómica evaluadas, aclarando que la información consultada no constituye una reserva confirmada.",
+            "evaluacion_supervisor": "aprobado"
+          },
+          "messages": [
+            {
+              "tipo": "ai",
+              "contenido": "Para su viaje a Tokio del 12 al 20 de febrero de 2027, para cuatro personas, estas son las opciones compatibles según la información consultada:\n\n**Alojamiento**\n- **Hotel Sakura Central**, en Marunouchi: hotel de 4 estrellas con capacidad para cuatro personas y disponibilidad informada para toda la estadía.\n- **Residencia Aoi Familiar**, en Nihonbashi: alojamiento de 3 estrellas con capacidad para seis personas y disponibilidad informada para toda la estadía.\n\n**Actividades turísticas**\n- **Museo de la Ciudad Sakura**, en Kyobashi: una alternativa para visitar durante el viaje.\n- **Mirador Aoi**, en Otemachi: otra opción de visita compatible con sus fechas.\n\n**Gastronomía**\n- **Restaurante Jardín Sakura**, en Ginza: una alternativa gastronómica cuyo período de disponibilidad informado incluye el viaje.\n\nNo se informan restricciones para estas actividades ni para el restaurante. Las disponibilidades corresponden a la información consultada y no constituyen reservas confirmadas; en particular, no se informa disponibilidad de mesas en el restaurante.",
+              "nombre": "supervisor"
+            }
+          ]
+        }
+      }
+    ],
+    "estado_final": {
+      "messages": [
+        {
+          "tipo": "human",
+          "contenido": "Quiero viajar a Tokio del 12 al 20 de febrero de 2027. Somos cuatro personas y buscamos alojamiento, actividades turísticas y gastronomía.",
+          "nombre": null
+        },
+        {
+          "tipo": "ai",
+          "contenido": "Para su viaje a Tokio del 12 al 20 de febrero de 2027, para cuatro personas, estas son las opciones compatibles según la información consultada:\n\n**Alojamiento**\n- **Hotel Sakura Central**, en Marunouchi: hotel de 4 estrellas con capacidad para cuatro personas y disponibilidad informada para toda la estadía.\n- **Residencia Aoi Familiar**, en Nihonbashi: alojamiento de 3 estrellas con capacidad para seis personas y disponibilidad informada para toda la estadía.\n\n**Actividades turísticas**\n- **Museo de la Ciudad Sakura**, en Kyobashi: una alternativa para visitar durante el viaje.\n- **Mirador Aoi**, en Otemachi: otra opción de visita compatible con sus fechas.\n\n**Gastronomía**\n- **Restaurante Jardín Sakura**, en Ginza: una alternativa gastronómica cuyo período de disponibilidad informado incluye el viaje.\n\nNo se informan restricciones para estas actividades ni para el restaurante. Las disponibilidades corresponden a la información consultada y no constituyen reservas confirmadas; en particular, no se informa disponibilidad de mesas en el restaurante.",
+          "nombre": "supervisor"
+        }
+      ],
+      "solicitud_original": {
+        "destino": "Tokio",
+        "fecha_inicio": "2027-02-12",
+        "fecha_fin": "2027-02-20",
+        "cantidad_personas": 4,
+        "componentes": [
+          "alojamiento",
+          "actividades",
+          "gastronomia"
+        ],
+        "preferencias": []
+      },
+      "resultado_hoteleria": {
+        "estado_busqueda": "completada",
+        "hoteles": [
+          {
+            "id": "hotel-tokio-01",
+            "nombre": "Hotel Sakura Central",
+            "fuente": "data/hoteles.json",
+            "direccion": "Sector de Marunouchi, Tokio",
+            "coordenadas": {
+              "latitud": 35.684,
+              "longitud": 139.769
+            },
+            "estrellas": 4,
+            "capacidad": 4,
+            "disponibilidad": "disponible_en_fuente",
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-02-28"
+              }
+            ],
+            "observaciones": []
+          },
+          {
+            "id": "hotel-tokio-02",
+            "nombre": "Residencia Aoi Familiar",
+            "fuente": "data/hoteles.json",
+            "direccion": "Sector de Nihonbashi, Tokio",
+            "coordenadas": {
+              "latitud": 35.688,
+              "longitud": 139.774
+            },
+            "estrellas": 3,
+            "capacidad": 6,
+            "disponibilidad": "disponible_en_fuente",
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-10",
+                "fin": "2027-02-25"
+              }
+            ],
+            "observaciones": []
+          }
+        ],
+        "observaciones": []
+      },
+      "resultado_turismo": {
+        "estado_busqueda": "completada",
+        "opciones": [
+          {
+            "id": "turismo-tokio-01",
+            "nombre": "Museo de la Ciudad Sakura",
+            "fuente": "data/turismo.json",
+            "categoria": "attraction",
+            "direccion": "Sector de Kyobashi, Tokio",
+            "coordenadas": {
+              "latitud": 35.675,
+              "longitud": 139.772
+            },
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-03-31"
+              }
+            ],
+            "restricciones": [],
+            "observaciones": []
+          },
+          {
+            "id": "turismo-tokio-02",
+            "nombre": "Mirador Aoi",
+            "fuente": "data/turismo.json",
+            "categoria": "viewpoint",
+            "direccion": "Sector de Otemachi, Tokio",
+            "coordenadas": {
+              "latitud": 35.687,
+              "longitud": 139.765
+            },
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-03-31"
+              }
+            ],
+            "restricciones": [],
+            "observaciones": []
+          },
+          {
+            "id": "turismo-tokio-03",
+            "nombre": "Restaurante Jardín Sakura",
+            "fuente": "data/turismo.json",
+            "categoria": "gastronomy",
+            "direccion": "Sector de Ginza, Tokio",
+            "coordenadas": {
+              "latitud": 35.671,
+              "longitud": 139.764
+            },
+            "periodos_disponibles": [
+              {
+                "inicio": "2027-02-01",
+                "fin": "2027-03-31"
+              }
+            ],
+            "restricciones": [],
+            "observaciones": [
+              {
+                "tipo": "incertidumbre",
+                "descripcion": "No se informa disponibilidad de mesas ni se confirman reservas"
+              }
+            ]
+          }
+        ],
+        "observaciones": []
+      },
+      "resultado_analisis": {
+        "sintesis_analisis": "Los dos alojamientos cubren íntegramente la estadía del 12 al 20 de febrero de 2027 y tienen capacidad para cuatro personas. Las dos actividades y el Restaurante Jardín Sakura también son compatibles con las fechas y no presentan restricciones conocidas. Se recomiendan como alternativas válidas de alojamiento, actividades y gastronomía, sin establecer prioridades porque no se indicaron preferencias. La evaluación utiliza exclusivamente las investigaciones y comprobaciones recibidas y no confirma reservas.",
+        "resultados_evaluados": [
+          {
+            "opcion_id": "hotel-tokio-01",
+            "dominio": "hoteleria",
+            "clasificacion": "compatible",
+            "justificacion": "Hotel Sakura Central figura disponible del 1 al 28 de febrero de 2027, período que cubre toda la estadía solicitada. Su capacidad de cuatro personas alcanza para el grupo completo; ambas condiciones están corroboradas por las comprobaciones. Es una alternativa válida de alojamiento, sin reserva confirmada.",
+            "distancia_km": 0.356
+          },
+          {
+            "opcion_id": "hotel-tokio-02",
+            "dominio": "hoteleria",
+            "clasificacion": "compatible",
+            "justificacion": "Residencia Aoi Familiar figura disponible del 10 al 25 de febrero de 2027, cubriendo íntegramente el viaje. Su capacidad de seis personas es suficiente para las cuatro solicitadas; las comprobaciones confirman compatibilidad temporal y capacidad. Es una alternativa válida de alojamiento, sin que su mayor capacidad implique una preferencia del grupo ni una reserva confirmada.",
+            "distancia_km": 0.98
+          },
+          {
+            "opcion_id": "turismo-tokio-01",
+            "dominio": "turismo",
+            "clasificacion": "compatible",
+            "justificacion": "Museo de la Ciudad Sakura tiene un período disponible del 1 de febrero al 31 de marzo de 2027, que permite visitarlo durante el viaje. La comprobación temporal es positiva y no se informan restricciones. Se recomienda como actividad posible; no se requiere confirmar cupos para esta recomendación general.",
+            "distancia_km": 0.819
+          },
+          {
+            "opcion_id": "turismo-tokio-02",
+            "dominio": "turismo",
+            "clasificacion": "compatible",
+            "justificacion": "Mirador Aoi tiene disponibilidad informada del 1 de febrero al 31 de marzo de 2027, compatible con una visita durante la estadía. La comprobación temporal es positiva y no hay restricciones conocidas. Se recomienda como otra actividad posible, sin asumir preferencias ni confirmar acceso o reservas.",
+            "distancia_km": 0.672
+          },
+          {
+            "opcion_id": "turismo-tokio-03",
+            "dominio": "turismo",
+            "clasificacion": "compatible",
+            "justificacion": "Restaurante Jardín Sakura tiene disponibilidad informada del 1 de febrero al 31 de marzo de 2027, período que incluye el viaje del 12 al 20 de febrero. La comprobación temporal es positiva y no se informan restricciones que contradigan la solicitud. Se recomienda como alternativa gastronómica general. No se informa disponibilidad de mesas ni se confirman reservas, pero no se solicitaron reservas gastronómicas ni un día y horario concretos; esa incertidumbre no impide la recomendación ni requiere dejarla pendiente de verificación.",
+            "distancia_km": 1.168
+          }
+        ],
+        "observaciones": [
+          {
+            "tipo": "incertidumbre",
+            "descripcion": "El Restaurante Jardín Sakura no informa disponibilidad de mesas ni confirma reservas. Esta incertidumbre se conserva como información y no constituye una incompatibilidad ni requiere dejar pendiente la recomendación gastronómica general."
+          },
+          {
+            "tipo": "limitacion",
+            "descripcion": "Las disponibilidades corresponden a los períodos informados en las fuentes; este análisis no confirma reservas de alojamiento, actividades ni gastronomía."
+          },
+          {
+            "tipo": "limitacion",
+            "descripcion": "Las distancias se reproducen de las comprobaciones recibidas como datos informativos. No se especifica su punto de referencia y no se utilizan para imponer umbrales o priorizar opciones."
+          }
+        ]
+      },
+      "refinamientos_analista": 1,
+      "decision_supervisor": {
+        "next_agent": "finalizar",
+        "instruccion": "Presentar las dos alternativas de alojamiento, las dos actividades y la opción gastronómica evaluadas, aclarando que la información consultada no constituye una reserva confirmada.",
+        "evaluacion_supervisor": "aprobado"
+      }
+    },
+    "control_prueba": {
+      "omision_aplicada": true,
+      "opcion_omitida": [
+        "turismo",
+        "turismo-tokio-03"
+      ],
+      "opciones_esperadas": [
+        [
+          "hoteleria",
+          "hotel-tokio-01"
+        ],
+        [
+          "hoteleria",
+          "hotel-tokio-02"
+        ],
+        [
+          "turismo",
+          "turismo-tokio-01"
+        ],
+        [
+          "turismo",
+          "turismo-tokio-02"
+        ],
+        [
+          "turismo",
+          "turismo-tokio-03"
+        ]
+      ],
+      "cantidad_antes": 5,
+      "cantidad_despues": 4
+    },
+    "resultado_prueba": {
+      "satisfactoria": true,
+      "motivos": [],
+      "feedback_observado": "Completá el análisis incorporando la evaluación individual omitida del Restaurante Jardín Sakura y su recomendación gastronómica. Justificá su clasificación con el período informado, del 1 de febrero al 31 de marzo de 2027, y la ausencia de restricciones conocidas para el viaje del 12 al 20 de febrero. La falta de información sobre mesas o reservas no implica incompatibilidad ni impide una recomendación general, ya que no se solicitaron reservas gastronómicas. Conservá las evaluaciones válidas de los dos alojamientos y las dos actividades. Usá únicamente la solicitud y las investigaciones existentes, sin nuevas búsquedas ni requisitos adicionales.",
+      "criterio_feedback": "Objetivo gastronómico o cobertura de cuatro/cinco opciones y evaluación faltante explícitos; revisión textual conservadora"
+    }
+  }
+}

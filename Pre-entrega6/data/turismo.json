@@ -1,0 +1,41 @@
+[
+  {
+    "destino": "Tokio",
+    "id": "turismo-tokio-01",
+    "nombre": "Museo de la Ciudad Sakura",
+    "fuente": "data/turismo.json",
+    "categoria": "attraction",
+    "direccion": "Sector de Kyobashi, Tokio",
+    "coordenadas": {"latitud": 35.6750, "longitud": 139.7720},
+    "periodos_disponibles": [{"inicio": "2027-02-01", "fin": "2027-03-31"}],
+    "restricciones": []
+  },
+  {
+    "destino": "Tokio",
+    "id": "turismo-tokio-02",
+    "nombre": "Mirador Aoi",
+    "fuente": "data/turismo.json",
+    "categoria": "viewpoint",
+    "direccion": "Sector de Otemachi, Tokio",
+    "coordenadas": {"latitud": 35.6870, "longitud": 139.7650},
+    "periodos_disponibles": [{"inicio": "2027-02-01", "fin": "2027-03-31"}],
+    "restricciones": []
+  },
+  {
+    "destino": "Tokio",
+    "id": "turismo-tokio-03",
+    "nombre": "Restaurante Jardín Sakura",
+    "fuente": "data/turismo.json",
+    "categoria": "gastronomy",
+    "direccion": "Sector de Ginza, Tokio",
+    "coordenadas": {"latitud": 35.6710, "longitud": 139.7640},
+    "periodos_disponibles": [{"inicio": "2027-02-01", "fin": "2027-03-31"}],
+    "restricciones": [],
+    "observaciones": [
+      {
+        "tipo": "incertidumbre",
+        "descripcion": "No se informa disponibilidad de mesas ni se confirman reservas"
+      }
+    ]
+  }
+]
