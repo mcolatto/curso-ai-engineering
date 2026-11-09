@@ -196,7 +196,11 @@ El fragmento de feedback se reproduce de la ejecución incluida; la instrucción
 
 El notebook reutiliza `main.py` mediante `await`, sin duplicar agentes ni llamar a `asyncio.run()` dentro del event loop de Colab. Usa la rama `main` y muestra el commit ejecutado. Si ya hay un clon en la sesión, lo reutiliza; para descargar una publicación más reciente, iniciar un entorno nuevo. Si la carpeta no está publicada completa, informa el requisito pendiente antes de instalar dependencias.
 
-Los archivos SQLite de Colab son temporales. La traza del repositorio no se presenta como evidencia de una corrida nueva si ésta falla antes de generarla. La validación realizada del notebook es local con servicios simulados; su ejecución en un runtime real de Colab debe comprobarse por separado.
+La celda de instalación aplica un ajuste específico para el entorno de Colab: después de instalar `requirements.txt`, instala `jedi` para IPython y fija `langchain-core==1.7.4` para compatibilidad con el `langchain` preinstalado. Luego ejecuta `pip check`. El entorno local conserva las versiones declaradas en `requirements.txt`.
+
+El notebook se validó mediante una ejecución real en Google Colab: `pip check` finalizó correctamente y los tres escenarios completaron su recorrido. Febrero terminó `aprobado`, marzo `aprobado_con_advertencias` y la prueba controlada fue satisfactoria con un único refinamiento. El Supervisor identificó expresamente la evaluación omitida del Restaurante Jardín Sakura y solicitó completarla sin nuevas búsquedas.
+
+Los archivos SQLite de Colab son temporales. La traza del repositorio no se presenta como evidencia de una corrida nueva si ésta falla antes de generarla.
 
 ## Tests y consumo
 

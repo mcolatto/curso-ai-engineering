@@ -71,7 +71,11 @@ class NotebookTests(unittest.IsolatedAsyncioTestCase):
             exec(self.code[1], namespace)
         self.assertEqual(run.call_args_list[0].args[0],
                          [sys.executable, "-m", "pip", "install", "-q", "-r", "requirements.txt"])
-        self.assertEqual(run.call_args_list[1].args[0], [sys.executable, "-m", "pip", "check"])
+        self.assertEqual(run.call_args_list[1].args[0],
+                         [sys.executable, "-m", "pip", "install", "-q", "jedi", "langchain-core==1.7.4"])
+        self.assertEqual(run.call_args_list[2].args[0], [sys.executable, "-m", "pip", "check"])
+        self.assertEqual(run.call_count, 3)
+        self.assertTrue(all(call.kwargs["check"] for call in run.call_args_list))
 
     def test_secreto_en_entorno_sin_imprimirlo_y_error_sin_detalles(self):
         colab = types.ModuleType("google.colab")
