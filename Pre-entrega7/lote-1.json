@@ -1,0 +1,65 @@
+{
+  "lote_id": "e542b78f-dc79-4f71-841c-5369430429d4",
+  "proyecto_id": "a1bf6b69-c731-4e30-afcf-206c36127d5d",
+  "iniciado_en": "2026-11-16T20:57:09.690323Z",
+  "estado": "COMPLETO",
+  "mediciones": [
+    {
+      "peticion": 1,
+      "job_id": "bb4e98f2-6525-4486-9007-da03d8ffc3e3",
+      "estado": "DONE",
+      "aceptacion_ms": 46.406,
+      "latencia_traza_s": 38.145801,
+      "inicio_traza": "2026-11-16T20:57:09.799747Z",
+      "tokens": 12672,
+      "costo_usd": "0.0335419",
+      "error": null
+    },
+    {
+      "peticion": 2,
+      "job_id": "f7868092-974d-4b28-abe2-a683b2a825aa",
+      "estado": "DONE",
+      "aceptacion_ms": 239.608,
+      "latencia_traza_s": 36.902934,
+      "inicio_traza": "2026-11-16T20:57:10.013617Z",
+      "tokens": 12801,
+      "costo_usd": "0.0340564",
+      "error": null
+    },
+    {
+      "peticion": 3,
+      "job_id": "58ba91e4-51e1-4aee-9545-c2bc8c3272f0",
+      "estado": "DONE",
+      "aceptacion_ms": 238.309,
+      "latencia_traza_s": 40.193115,
+      "inicio_traza": "2026-11-16T20:57:10.001202Z",
+      "tokens": 13041,
+      "costo_usd": "0.0356714",
+      "error": null
+    },
+    {
+      "peticion": 4,
+      "job_id": "3c80e074-05c6-40b0-b5ad-3112e92c0358",
+      "estado": "DONE",
+      "aceptacion_ms": 251.07,
+      "latencia_traza_s": 37.661087,
+      "inicio_traza": "2026-11-16T20:57:10.000280Z",
+      "tokens": 12826,
+      "costo_usd": "0.0343119",
+      "error": null
+    },
+    {
+      "peticion": 5,
+      "job_id": "dcc9e659-5d3d-42d3-a6e7-3736a97dd2f9",
+      "estado": "DONE",
+      "aceptacion_ms": 251.138,
+      "latencia_traza_s": 39.796682,
+      "inicio_traza": "2026-11-16T20:57:10.056448Z",
+      "tokens": 12908,
+      "costo_usd": "0.0348414",
+      "error": null
+    }
+  ],
+  "latencia_p95_s": 40.193115,
+  "feedback_publicado": true
+}
