@@ -1,0 +1,26 @@
+{
+  "realizada_en": "2026-11-22T20:59:35.892450+00:00",
+  "tipo": "copia limpia local; sin clon remoto ni publicación",
+  "entorno": "Docker Compose; proyecto, red y volumen independientes; puerto temporal 18000",
+  "configuracion": "Credencial ficticia y LANGSMITH_TRACING=false; sin copiar .env real",
+  "construccion": "Correcta; Docker reutilizó capas de imagen y dependencias de su caché",
+  "arranque": "API y Redis healthy",
+  "python": "3.12.15",
+  "pip_check": "No broken requirements found",
+  "tests": {
+    "total": 104,
+    "aprobados": 103,
+    "omitidos": 1,
+    "integraciones_redis": "Habilitadas contra Redis real de la copia descartable",
+    "motivo_omision": "Comprobación Git: contenedor sin Git ni metadatos .git; exclusión de .env comprobada en host"
+  },
+  "llamadas_reales_openai_langsmith": 0,
+  "cambios_codigo_productivo": false,
+  "alcance": "Versión con README autónomo y comparador genérico, tras retirar reportes históricos y provisionales.",
+  "archivos_verificados_sha256": {
+    "scripts/comparar_lotes.py": "e1f51f2945bf713680b99ae42b0a3c46bbefa9b6507d19cb6b6df5077ca39652",
+    "tests/test_comparar_lotes.py": "994c5fdde9ccc6645e36f08c719d00c09424239cefc0192db9d38d3dc365c895",
+    "requirements.txt": "7dabb9c2b98d76962065ca1952f4a4b96f7a5361bfa72ab05635e52e4b5b0a92"
+  },
+  "nota_documentacion": "Después de la comprobación se aclararon en el inicio del README las variables LANGSMITH_API_KEY y LANGSMITH_TRACING=true; no se modificaron comandos ejecutables ni código."
+}

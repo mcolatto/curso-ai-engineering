@@ -1,0 +1,207 @@
+{
+  "proyecto_id": "01a204ca-e373-701c-8ea5-88b3a2f4ad8f",
+  "trazas": [
+    {
+      "run_id": "12b4cfa6-c9e0-4983-bd10-d63914c75275",
+      "job_id": "12b4cfa6-c9e0-4983-bd10-d63914c75275",
+      "nombre": "orquestador_viajes_inicio",
+      "fase": "inicio",
+      "tags": [
+        "lote:a10dd7a8-9554-4fda-b6a2-c1549845110c",
+        "inicio",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:53:15.728976+00:00",
+      "fin": "2026-11-22T19:53:49.199956+00:00",
+      "latencia_s": 33.47098,
+      "tokens": 13056,
+      "costo_usd": "0.0359004"
+    },
+    {
+      "run_id": "1611c04e-ceaf-4ea6-8049-46e88b7b594c",
+      "job_id": "b516f853-a2a5-4c8c-ab94-81d3946028e6",
+      "nombre": "orquestador_viajes_reanudacion",
+      "fase": "reanudacion",
+      "tags": [
+        "reanudacion",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:59:42.066644+00:00",
+      "fin": "2026-11-22T19:59:42.078179+00:00",
+      "latencia_s": 0.011535,
+      "tokens": null,
+      "costo_usd": null
+    },
+    {
+      "run_id": "2cd8b37b-0ec3-4a98-b81f-bc792fc53926",
+      "job_id": "2cd8b37b-0ec3-4a98-b81f-bc792fc53926",
+      "nombre": "orquestador_viajes_refinamiento_controlado",
+      "fase": "inicio",
+      "tags": [
+        "refinamiento_controlado",
+        "inicio",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T20:00:34.316086+00:00",
+      "fin": "2026-11-22T20:01:17.367941+00:00",
+      "latencia_s": 43.051855,
+      "tokens": 19688,
+      "costo_usd": "0.0576181"
+    },
+    {
+      "run_id": "41b1c8d8-4073-45e5-83ea-cdb06ae70067",
+      "job_id": "41b1c8d8-4073-45e5-83ea-cdb06ae70067",
+      "nombre": "orquestador_viajes_inicio",
+      "fase": "inicio",
+      "tags": [
+        "lote:a10dd7a8-9554-4fda-b6a2-c1549845110c",
+        "inicio",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:53:15.725233+00:00",
+      "fin": "2026-11-22T19:53:46.776809+00:00",
+      "latencia_s": 31.051576,
+      "tokens": 12965,
+      "costo_usd": "0.0384216"
+    },
+    {
+      "run_id": "4720e71f-4c03-41d6-80ed-171bb6346322",
+      "job_id": "4720e71f-4c03-41d6-80ed-171bb6346322",
+      "nombre": "orquestador_viajes_inicio",
+      "fase": "inicio",
+      "tags": [
+        "lote:a10dd7a8-9554-4fda-b6a2-c1549845110c",
+        "inicio",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:53:15.528037+00:00",
+      "fin": "2026-11-22T19:53:46.830179+00:00",
+      "latencia_s": 31.302142,
+      "tokens": 12896,
+      "costo_usd": "0.0380051"
+    },
+    {
+      "run_id": "48d0eea0-54b8-4314-bf7e-112f0c43ae95",
+      "job_id": "5e816394-e8f9-476c-9313-392e15ad61b7",
+      "nombre": "orquestador_viajes_reanudacion",
+      "fase": "reanudacion",
+      "tags": [
+        "reanudacion",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:59:40.984276+00:00",
+      "fin": "2026-11-22T19:59:41.144321+00:00",
+      "latencia_s": 0.160045,
+      "tokens": null,
+      "costo_usd": null
+    },
+    {
+      "run_id": "5e816394-e8f9-476c-9313-392e15ad61b7",
+      "job_id": "5e816394-e8f9-476c-9313-392e15ad61b7",
+      "nombre": "orquestador_viajes_inicio",
+      "fase": "inicio",
+      "tags": [
+        "inicio",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:57:07.807163+00:00",
+      "fin": "2026-11-22T19:57:46.684217+00:00",
+      "latencia_s": 38.877054,
+      "tokens": 13911,
+      "costo_usd": "0.0423193"
+    },
+    {
+      "run_id": "706edb1d-38de-420d-9474-0da9e5a7b240",
+      "job_id": "706edb1d-38de-420d-9474-0da9e5a7b240",
+      "nombre": "orquestador_viajes_inicio",
+      "fase": "inicio",
+      "tags": [
+        "lote:a10dd7a8-9554-4fda-b6a2-c1549845110c",
+        "inicio",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:53:15.727274+00:00",
+      "fin": "2026-11-22T19:53:49.246108+00:00",
+      "latencia_s": 33.518834,
+      "tokens": 13073,
+      "costo_usd": "0.0358214"
+    },
+    {
+      "run_id": "8b9372cc-0c16-425f-9b26-8fdf61a74e3f",
+      "job_id": "8b9372cc-0c16-425f-9b26-8fdf61a74e3f",
+      "nombre": "orquestador_viajes_inicio",
+      "fase": "inicio",
+      "tags": [
+        "inicio",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:56:36.358204+00:00",
+      "fin": "2026-11-22T19:57:06.978688+00:00",
+      "latencia_s": 30.620484,
+      "tokens": 12960,
+      "costo_usd": "0.0354178"
+    },
+    {
+      "run_id": "b516f853-a2a5-4c8c-ab94-81d3946028e6",
+      "job_id": "b516f853-a2a5-4c8c-ab94-81d3946028e6",
+      "nombre": "orquestador_viajes_inicio",
+      "fase": "inicio",
+      "tags": [
+        "inicio",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:57:47.340287+00:00",
+      "fin": "2026-11-22T19:58:26.277804+00:00",
+      "latencia_s": 38.937517,
+      "tokens": 13671,
+      "costo_usd": "0.0401252"
+    },
+    {
+      "run_id": "e58b5521-ba7d-4306-9e0a-58bc0656a143",
+      "job_id": "e58b5521-ba7d-4306-9e0a-58bc0656a143",
+      "nombre": "orquestador_viajes_inicio",
+      "fase": "inicio",
+      "tags": [
+        "lote:a10dd7a8-9554-4fda-b6a2-c1549845110c",
+        "inicio",
+        "proyecto-final"
+      ],
+      "con_error": false,
+      "inicio": "2026-11-22T19:53:15.725861+00:00",
+      "fin": "2026-11-22T19:53:47.011144+00:00",
+      "latencia_s": 31.285283,
+      "tokens": 12865,
+      "costo_usd": "0.0345649"
+    }
+  ],
+  "lecturas": [
+    {
+      "lectura": 1,
+      "trazas": 11
+    },
+    {
+      "lectura": 2,
+      "trazas": 11
+    },
+    {
+      "lectura": 3,
+      "trazas": 11
+    }
+  ],
+  "observaciones_estables": 3,
+  "nueve_hilos_distintos": true,
+  "once_trazas_incluyendo_reanudaciones": true,
+  "sin_errores": true,
+  "costo_total_registrado_usd": "0.3581938",
+  "nota": "Inicio y reanudación HITL son trazas separadas del mismo hilo. Las reanudaciones no invocan al modelo; sus métricas pueden ser nulas."
+}

@@ -1,0 +1,121 @@
+{
+  "lote_id": "a10dd7a8-9554-4fda-b6a2-c1549845110c",
+  "proyecto_id": "01a204ca-e373-701c-8ea5-88b3a2f4ad8f",
+  "iniciado_en": "2026-11-22T19:53:15.443662Z",
+  "prompt": "Quiero viajar a Tokio del 12 al 20 de febrero de 2027. Somos cuatro personas y buscamos alojamiento, actividades turísticas y gastronomía.",
+  "estado": "COMPLETO",
+  "mediciones": [
+    {
+      "peticion": 1,
+      "job_id": "4720e71f-4c03-41d6-80ed-171bb6346322",
+      "estado": "DONE",
+      "aceptacion_ms": 23.254,
+      "latencia_traza_s": 31.302142,
+      "inicio_traza": "2026-11-22T19:53:15.528037Z",
+      "tokens": 12896,
+      "costo_usd": "0.0380051",
+      "respuesta": "Para su viaje a **Tokio del 12 al 20 de febrero de 2027, para cuatro personas**, estas son las opciones recomendadas según la información consultada:\n\n### Alojamiento\n- **Hotel Sakura Central**, en Marunouchi: hotel de 4 estrellas con capacidad para 4 personas. El período de disponibilidad informado cubre toda su estadía.\n- **Residencia Aoi Familiar**, en Nihonbashi: alojamiento de 3 estrellas con capacidad para 6 personas, también con disponibilidad informada para todas las fechas del viaje.\n\n### Actividades turísticas\n- **Museo de la Ciudad Sakura**, en Kyobashi: una opción de visita cuyo período de disponibilidad incluye las fechas del viaje.\n- **Mirador Aoi**, en Otemachi: otra alternativa para incorporar al recorrido, con disponibilidad informada durante su estadía.\n\n### Gastronomía\n- **Restaurante Jardín Sakura**, en Ginza: una opción gastronómica con un período de disponibilidad que incluye su viaje. No se informa disponibilidad de mesas.\n\nEstas recomendaciones no implican reservas confirmadas.",
+      "configuracion": {
+        "model": "gpt-6.1-sol",
+        "timeout_seconds": 30,
+        "max_tokens": 4096,
+        "reasoning_effort": null,
+        "recursion_limit": 10,
+        "job_timeout_seconds": 300
+      },
+      "metricas_confirmadas_en": "2026-11-22T20:07:23.273805Z",
+      "observaciones_estables": 3,
+      "error": null
+    },
+    {
+      "peticion": 2,
+      "job_id": "12b4cfa6-c9e0-4983-bd10-d63914c75275",
+      "estado": "DONE",
+      "aceptacion_ms": 214.483,
+      "latencia_traza_s": 33.47098,
+      "inicio_traza": "2026-11-22T19:53:15.728976Z",
+      "tokens": 13056,
+      "costo_usd": "0.0359004",
+      "respuesta": "Para su viaje a **Tokio del 12 al 20 de febrero de 2027, para cuatro personas**, estas son las opciones compatibles según la información consultada:\n\n### Alojamiento\n- **Hotel Sakura Central**, en Marunouchi: categoría de 4 estrellas y capacidad para cuatro personas. La disponibilidad informada cubre toda la estadía.\n- **Residencia Aoi Familiar**, en Nihonbashi: categoría de 3 estrellas y capacidad para seis personas. También cubre todas las fechas del viaje; no se informa la distribución de habitaciones.\n\n### Actividades turísticas\n- **Museo de la Ciudad Sakura**, en Kyobashi: una opción de visita cuyo período disponible incluye las fechas del viaje.\n- **Mirador Aoi**, en Otemachi: otra alternativa para incorporar a sus recorridos, también compatible con el período de la estadía.\n\n### Gastronomía\n- **Restaurante Jardín Sakura**, en Ginza: una opción gastronómica con período disponible durante su visita. No se informa disponibilidad de mesas.\n\nAmbos alojamientos cumplen con las fechas y la capacidad del grupo. Como no indicaron preferencias adicionales, no hay elementos suficientes para priorizar uno sobre el otro. **No se ha realizado ninguna reserva**; la disponibilidad indicada corresponde a la información consultada.",
+      "configuracion": {
+        "model": "gpt-6.1-sol",
+        "timeout_seconds": 30,
+        "max_tokens": 4096,
+        "reasoning_effort": null,
+        "recursion_limit": 10,
+        "job_timeout_seconds": 300
+      },
+      "metricas_confirmadas_en": "2026-11-22T20:07:23.272517Z",
+      "observaciones_estables": 3,
+      "error": null
+    },
+    {
+      "peticion": 3,
+      "job_id": "41b1c8d8-4073-45e5-83ea-cdb06ae70067",
+      "estado": "DONE",
+      "aceptacion_ms": 215.608,
+      "latencia_traza_s": 31.051576,
+      "inicio_traza": "2026-11-22T19:53:15.725233Z",
+      "tokens": 12965,
+      "costo_usd": "0.0384216",
+      "respuesta": "Para su viaje a **Tokio del 12 al 20 de febrero de 2027, para cuatro personas**, estas son las opciones recomendadas según la información consultada:\n\n### Alojamiento\n- **Hotel Sakura Central**, en Marunouchi: hotel de 4 estrellas con capacidad para cuatro personas. La disponibilidad informada cubre toda la estadía.\n- **Residencia Aoi Familiar**, en Nihonbashi: alojamiento de 3 estrellas con capacidad para seis personas, también con disponibilidad informada para todas las fechas del viaje.\n\n### Actividades\n- **Museo de la Ciudad Sakura**, en Kyobashi.\n- **Mirador Aoi**, en Otemachi.\n\nAmbas actividades tienen períodos de disponibilidad que incluyen las fechas del viaje y no presentan restricciones conocidas que contradigan su pedido.\n\n### Gastronomía\n- **Restaurante Jardín Sakura**, en Ginza: una opción gastronómica con disponibilidad temporal informada durante su visita. No se informa disponibilidad de mesas.\n\nEstas recomendaciones se basan en la información consultada y **no constituyen reservas confirmadas**.",
+      "configuracion": {
+        "model": "gpt-6.1-sol",
+        "timeout_seconds": 30,
+        "max_tokens": 4096,
+        "reasoning_effort": null,
+        "recursion_limit": 10,
+        "job_timeout_seconds": 300
+      },
+      "metricas_confirmadas_en": "2026-11-22T20:07:23.273737Z",
+      "observaciones_estables": 3,
+      "error": null
+    },
+    {
+      "peticion": 4,
+      "job_id": "e58b5521-ba7d-4306-9e0a-58bc0656a143",
+      "estado": "DONE",
+      "aceptacion_ms": 214.579,
+      "latencia_traza_s": 31.285283,
+      "inicio_traza": "2026-11-22T19:53:15.725861Z",
+      "tokens": 12865,
+      "costo_usd": "0.0345649",
+      "respuesta": "Para su viaje a **Tokio del 12 al 20 de febrero de 2027, para cuatro personas**, estas son las opciones recomendadas según la información consultada:\n\n### Alojamiento\n- **Hotel Sakura Central**, en Marunouchi: hotel de 4 estrellas con capacidad para cuatro personas. El período de disponibilidad informado cubre toda su estadía.\n- **Residencia Aoi Familiar**, en Nihonbashi: alojamiento de 3 estrellas con capacidad para seis personas. También cuenta con disponibilidad informada para todas las fechas del viaje.\n\n### Actividades\n- **Museo de la Ciudad Sakura**, en Kyobashi.\n- **Mirador Aoi**, en Otemachi.\n\nAmbas actividades tienen períodos de funcionamiento informados que incluyen las fechas del viaje y no presentan restricciones conocidas que contradigan su solicitud.\n\n### Gastronomía\n- **Restaurante Jardín Sakura**, en Ginza: una alternativa gastronómica cuyo período informado incluye su estadía.\n\nEstas recomendaciones no implican reservas confirmadas. En particular, no se dispone de información sobre mesas disponibles en el restaurante.",
+      "configuracion": {
+        "model": "gpt-6.1-sol",
+        "timeout_seconds": 30,
+        "max_tokens": 4096,
+        "reasoning_effort": null,
+        "recursion_limit": 10,
+        "job_timeout_seconds": 300
+      },
+      "metricas_confirmadas_en": "2026-11-22T20:07:23.273607Z",
+      "observaciones_estables": 3,
+      "error": null
+    },
+    {
+      "peticion": 5,
+      "job_id": "706edb1d-38de-420d-9474-0da9e5a7b240",
+      "estado": "DONE",
+      "aceptacion_ms": 213.98,
+      "latencia_traza_s": 33.518834,
+      "inicio_traza": "2026-11-22T19:53:15.727274Z",
+      "tokens": 13073,
+      "costo_usd": "0.0358214",
+      "respuesta": "Para su viaje a **Tokio del 12 al 20 de febrero de 2027, para cuatro personas**, estas son las opciones recomendadas según la información consultada:\n\n### Alojamiento\n- **Hotel Sakura Central**, en Marunouchi: categoría de 4 estrellas y capacidad para 4 personas. El período de disponibilidad informado cubre toda la estadía.\n- **Residencia Aoi Familiar**, en Nihonbashi: categoría de 3 estrellas y capacidad para 6 personas. También cuenta con disponibilidad informada para todas las fechas del viaje.\n\n### Actividades turísticas\n- **Museo de la Ciudad Sakura**, en Kyobashi: una opción para incluir entre las visitas del viaje.\n- **Mirador Aoi**, en Otemachi: otra alternativa para su recorrido turístico.\n\nLos períodos de disponibilidad informados de ambas actividades incluyen las fechas de su visita y no se indican restricciones relevantes.\n\n### Gastronomía\n- **Restaurante Jardín Sakura**, en Ginza: una alternativa gastronómica cuyo período de disponibilidad informado incluye su estadía. No se informa disponibilidad de mesas.\n\nAmbos alojamientos cumplen con la capacidad necesaria para el grupo. Como no indicaron preferencias adicionales, no hay motivos suficientes para priorizar uno sobre otro. **No se realizó ni confirmó ninguna reserva**; la disponibilidad mencionada corresponde a la información consultada.",
+      "configuracion": {
+        "model": "gpt-6.1-sol",
+        "timeout_seconds": 30,
+        "max_tokens": 4096,
+        "reasoning_effort": null,
+        "recursion_limit": 10,
+        "job_timeout_seconds": 300
+      },
+      "metricas_confirmadas_en": "2026-11-22T20:07:23.272793Z",
+      "observaciones_estables": 3,
+      "error": null
+    }
+  ],
+  "latencia_p95_s": 33.518834,
+  "feedback_publicado": true
+}

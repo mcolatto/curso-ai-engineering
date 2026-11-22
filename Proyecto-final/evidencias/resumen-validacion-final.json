@@ -1,0 +1,34 @@
+{
+  "resultado": "satisfactorio",
+  "ejecuciones_iniciales": 9,
+  "reanudaciones_hitl": 2,
+  "escenarios": {
+    "concurrencia": "5 trabajos DONE con respuestas y checkpoints independientes",
+    "respuesta_parcial": "DONE con advertencias y recomendaciones útiles",
+    "hitl_aprobado": "Pausa conservada tras reiniciar API; DONE con reserva simulada",
+    "hitl_rechazado": "Pausa conservada tras reiniciar API; DONE sin reserva",
+    "refinamiento": "Omisión gastronómica detectada con instrucción concreta; dos análisis, sin nuevas investigaciones"
+  },
+  "metricas": {
+    "p95_lote_s": 33.518834,
+    "tokens_lote": 64855,
+    "costo_lote_usd": 0.1827134,
+    "costo_total_registrado_usd": "0.3581938"
+  },
+  "comprobaciones": {
+    "tests_en_contenedor": {
+      "ejecutados": 104,
+      "aprobados": 103,
+      "omitidos": 1,
+      "motivo_omision": "Comprobación Git: el contenedor no incluye .git; revisada en el host"
+    },
+    "pip_check": "No broken requirements found",
+    "credenciales_en_json": false
+  },
+  "incidencia_metricas": {
+    "descripcion": "LangSmith devolvió inicialmente agregados de tokens y costo todavía parciales. Se corrigió el recolector para esperar tres observaciones estables y permitir actualizar reportes completos.",
+    "reporte_definitivo": "lote-validacion-final.json",
+    "nuevas_ejecuciones_para_corregir_metricas": 0
+  },
+  "limites": "Cinco observaciones permiten una comparación descriptiva; no constituyen un benchmark estadístico. La estabilidad de lecturas reduce el riesgo de agregados parciales, sin garantizar consistencia inmediata del servicio externo."
+}
